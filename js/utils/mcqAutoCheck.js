@@ -1,11 +1,10 @@
-
 /* 
-1) Purpose: Handles MCQ button logic with feedback
-2) Features: Checks correct/incorrect and disables buttons
+1) Purpose: Handles MCQ button logic and correctness checks
+2) Features: Adds button events with feedback + reusable correctness check
 3) Dependencies: None
-4) Related: Used in mixlingo.js, echoexpedition.js, etc.
+4) Related: Used in mixlingo.js, echo-exp.js, etc.
 5) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
-6) Timestamp: 2025-05-31 18:55 | File: js/utils/mcqAutoCheck.js
+6) Timestamp: 2025-05-31 23:59 | File: js/utils/mcqAutoCheck.js
 */
 
 export function autoAttachMCQEvents(container, callback) {
@@ -30,4 +29,9 @@ export function autoAttachMCQEvents(container, callback) {
       }
     });
   });
+}
+
+// ✅ Simple utility for direct answer comparison
+export function autoCheckMCQ(selected, correct) {
+  return selected === correct;
 }
