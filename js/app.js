@@ -11,7 +11,11 @@ import { initFont } from './ui/fontManager.js';
 import { applyTheme } from './ui/themeManager.js';
 import { showMainMenu } from './main.js';
 import { renderHeader } from './ui/uiHeader.js';
-import { renderFooter } from './ui/uiFooter.js';
+//import { renderFooter } from './ui/uiFooter.js';
+import { renderFooter as renderAppFooter } from './ui/uiFooter.js';
+
+
+//import { renderResult as renderSummary } from '../../utils/asciiRenderer.js';
 
 //import { renderAppHeader } from './uiHeader.js';
 //import { renderAppFooter } from './uiFooter.js';
