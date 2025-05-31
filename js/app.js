@@ -1,58 +1,27 @@
-
 /* 
-1) Purpose: Bootstraps LingoQuest2 app on load
-2) Features: Loads profile, theme, header/footer, routes to main
-3) Dependencies: profileManager.js, themeManager.js, uiHeader.js
-4) Related: js/profile/, js/ui/, js/main.js
-5) Special: Designed for large-button Minimal UI first
-6) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
-7) Timestamp: 2025-05-30 20:00 | File: js/app.js
+1) Purpose: Bootstraps LingoQuest2
+2) Loads profile, theme, font, language, menu
+3) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
+4) Timestamp: 2025-05-30 21:15 | File: js/app.js
 */
 
 import { initProfile } from './profile/profileManager.js';
-import { applyTheme } from './ui/themeManager.js';
 import { loadLanguage } from './ui/langManager.js';
 import { initFont } from './ui/fontManager.js';
+import { applyTheme } from './ui/themeManager.js';
 import { showMainMenu } from './main.js';
+import { renderHeader } from './ui/uiHeader.js';
+import { renderFooter } from './ui/uiFooter.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   initProfile();
+  initFont();
   applyTheme();
-  const { renderHeader } = await import('./ui/uiHeader.js');
-  const { renderFooter } = await import('./ui/uiFooter.js');
-  const { showMainMenu } = await import('./main.js');
-const savedLang = localStorage.getItem('ui-lang') || 'en';
- await loadLanguage(savedLang);
+
+  const lang = localStorage.getItem('ui-lang') || 'en';
+  await loadLanguage(lang);
+
   renderHeader();
   renderFooter();
-  showMainMenu();
-  initFont();
-
-
+  showMainMenu(); // ⬅️ This injects the MixLingo button
 });
-
-
-/* js/app.js */
-document.addEventListener('DOMContentLoaded', () => {
-  const menuArea = document.getElementById('menuArea');
-  menuArea.innerHTML = `<h1>👋 Welcome to LingoQuest2</h1>
-    <p>Please choose a mode or visit settings.</p>`;
-});
-
-
-document.getElementById('menuArea').innerHTML = '<h1>Hello from LingoQuest2!</h1>';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
