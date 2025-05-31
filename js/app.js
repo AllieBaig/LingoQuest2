@@ -23,5 +23,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   renderHeader();
   renderFooter();
+
+console.log('LingoQuest2 loaded. Showing main menu...');
+
   showMainMenu(); // ⬅️ This injects the MixLingo button
 });
