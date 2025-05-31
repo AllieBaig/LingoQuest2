@@ -13,7 +13,7 @@ import { initProfile } from './profile/profileManager.js';
 import { applyTheme } from './ui/themeManager.js';
 import { loadLanguage } from './ui/langManager.js';
 import { initFont } from './ui/fontManager.js';
-
+import { showMainMenu } from './main.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   initProfile();
@@ -26,8 +26,15 @@ const savedLang = localStorage.getItem('ui-lang') || 'en';
   renderHeader();
   renderFooter();
   showMainMenu();
-initFont();
+  initFont();
+
+
 });
+
+
+
+
+
 
 
 
