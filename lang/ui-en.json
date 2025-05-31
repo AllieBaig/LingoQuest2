@@ -6,3 +6,21 @@
   "settings": "Settings",
   "back_to_menu": "Back to Menu"
 }
+
+
+{
+  "start_game": "Start Game",
+  "choose_mode": "Choose Game Mode",
+  "profile_label": "Profile",
+  "settings": "Settings",
+  "back_to_menu": "Back to Menu",
+  "language_label": "Language",
+  "theme_label": "Theme",
+  "font_label": "Game Font",
+  "xp_label": "XP",
+  "nickname_label": "Nickname",
+  "avatar_label": "Avatar",
+  "confirm": "Confirm",
+  "cancel": "Cancel"
+}
+
