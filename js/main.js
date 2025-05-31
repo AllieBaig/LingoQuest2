@@ -23,7 +23,7 @@ export function showMainMenu() {
   mixLingoBtn.id = 'mixLingoBtn';
   mixLingoBtn.textContent = '🌍 MixLingo';
   mixLingoBtn.addEventListener('click', async () => {
-    logEvent('button_click', { id: 'mixLingoBtn', label: 'MixLingo' });
+    //logEvent('button_click', { id: 'mixLingoBtn', label: 'MixLingo' });
     const mode = await loadMode('mixlingo');
     mode.start();
   });
