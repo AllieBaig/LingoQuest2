@@ -62,6 +62,7 @@ export async function startMixLingo() {
   askNextQuestion();
 }
 
+/*
 async function loadQuestions() {
   try {
     const res = await fetch('lang/mixlingo-en.json');
@@ -69,6 +70,19 @@ async function loadQuestions() {
     questionSet = shuffle([...data]); // copy + shuffle
   } catch (err) {
     console.error('❌ MixLingo questions could not be loaded:', err);
+    document.getElementById('mixSentence').textContent = 'Failed to load questions.';
+  }
+}
+*/
+
+async function loadQuestions() {
+  const selectedLang = document.getElementById('answerLangSelect')?.value || 'en';
+  try {
+    const res = await fetch(`lang/mixlingo-${selectedLang}.json`);
+    const data = await res.json();
+    questionSet = shuffle([...data]);
+  } catch (err) {
+    console.error(`❌ MixLingo questions could not be loaded (lang: ${selectedLang})`, err);
     document.getElementById('mixSentence').textContent = 'Failed to load questions.';
   }
 }
