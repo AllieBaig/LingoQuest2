@@ -10,9 +10,10 @@ import { loadLanguage } from './ui/langManager.js';
 import { initFont } from './ui/fontManager.js';
 import { applyTheme } from './ui/themeManager.js';
 import { showMainMenu } from './main.js';
-import { renderHeader } from './ui/uiHeader.js';
+//import { renderHeader } from './ui/uiHeader.js';
 //import { renderFooter } from './ui/uiFooter.js';
 import { renderFooter as renderAppFooter } from './ui/uiFooter.js';
+import { renderHeader as renderAppHeader } from './ui/uiHeader.js';
 
 
 //import { renderResult as renderSummary } from '../../utils/asciiRenderer.js';
