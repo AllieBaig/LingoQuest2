@@ -1,30 +1,26 @@
+/*
+ * Purpose: Renders the bottom footer including XP tracker and Back to Menu button.
+ * Features: Dynamic DOM content injection into #appFooter.
+ * Depends on: xpTracker.js, gameUIManager.js
+ * Related: uiHeader.js
+ * Special Notes: Back to Menu triggers #menuArea visibility toggle.
+ * MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
+ * Timestamp: 2025-05-31 12:15 | File: js/uiFooter.js
+ */
 
-/* 
-1) Purpose: Renders footer with XP bar and optional Back to Menu button
-2) Features: Reflects user XP, and supports returning to main menu
-3) Dependencies: profileManager.js, main.js
-4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
-5) Timestamp: 2025-05-30 22:01 | File: js/ui/uiFooter.js
-*/
-
-import { getProfile } from '../profile/profileManager.js';
-import { showMainMenu } from '../main.js';
-
-export function renderFooter() {
+export function renderAppFooter() {
   const footer = document.getElementById('appFooter');
-  const profile = getProfile();
+  if (!footer) return;
 
   footer.innerHTML = `
-    <div class="footer-block">
-      <span data-i18n="xp_label">XP:</span>
-      <strong>${profile.xp}</strong>
-      <button id="backToMenuBtn" data-i18n="back_to_menu">Back to Menu</button>
+    <div class="footer-bar">
+      <button id="backToMenuBtn">🔙 Back to Menu</button>
+      <div id="xpTracker">XP: 0 | Level: 1</div>
     </div>
   `;
 
-  document.getElementById('backToMenuBtn').addEventListener('click', () => {
-    document.getElementById('gameArea').hidden = true;
+  document.getElementById('backToMenuBtn')?.addEventListener('click', () => {
     document.getElementById('menuArea').hidden = false;
-    showMainMenu();
+    document.getElementById('gameArea').hidden = true;
   });
 }
