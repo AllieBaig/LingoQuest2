@@ -1,4 +1,3 @@
-
 /* 
 1) Purpose: Renders header with nickname and avatar from profile
 2) Features: Uses data-i18n labels and emoji avatar
@@ -9,14 +8,18 @@
 
 import { getProfile } from '../profile/profileManager.js';
 
-export function renderHeader() {
+export function renderAppHeader() {
   const header = document.getElementById('appHeader');
-  const profile = getProfile();
+  if (!header) return;
+
+  const profile = getProfile() || {};
+  const avatar = profile.avatar || '🙂';
+  const nickname = profile.nickname || 'Guest';
 
   header.innerHTML = `
     <div class="header-block">
       <span data-i18n="profile_label">Profile:</span>
-      <strong>${profile.avatar} ${profile.nickname}</strong>
+      <strong>${avatar} ${nickname}</strong>
     </div>
   `;
 }
