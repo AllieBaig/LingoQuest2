@@ -7,20 +7,16 @@
 */
 
 import { getMixLingoQuestions } from '../utils/questionPool.js';
-import { autoAttachMCQEvents as autoCheckMCQ } from '../utils/mcqAutoCheck.js';
-//import { autoCheckMCQ as autoAttachMCQEvents } from '../utils/mcqAutoCheck.js';
-//import { autoCheckMCQ } from '../utils/mcqAutoCheck.js';
-//import { autoCheckMCQ } from '../mcqAutoCheck.js';
+import { autoCheckMCQ } from '../utils/mcqAutoCheck.js';
 import { addXP } from '../profile/profileManager.js';
 import { logEvent } from '../tools/eventLogger.js';
 import { renderIngameHead } from '../ui/ingameHead.js';
 import { renderIngameFoot } from '../ui/ingameFoot.js';
 
-let currentIndex = 0;
+let currentQuestion = null;
 let questionPool = [];
 let answeredIDs = new Set();
 let currentAnswerLang = localStorage.getItem('answerLang') || 'en';
-let currentQuestion = null;
 let difficulty = localStorage.getItem('game-difficulty') || 'medium';
 
 const optionCount = {
@@ -31,9 +27,7 @@ const optionCount = {
 
 document.addEventListener('answerLangChanged', (e) => {
   currentAnswerLang = e.detail;
-  if (currentQuestion) {
-    updateMCQAnswers(currentQuestion);
-  }
+  if (currentQuestion) updateMCQAnswers(currentQuestion);
 });
 
 export async function startMixLingo() {
@@ -45,7 +39,6 @@ export async function startMixLingo() {
   renderIngameFoot();
 
   questionPool = await getMixLingoQuestions();
-  currentIndex = 0;
   answeredIDs.clear();
 
   loadNextQuestion();
@@ -90,26 +83,30 @@ function updateMCQAnswers(q) {
   const allOptions = q.answers[currentAnswerLang] || [];
   const correct = q.correct[currentAnswerLang];
   const count = optionCount[difficulty];
-  const shown = shuffleArray([correct, ...allOptions.filter(w => w !== correct)]).slice(0, count);
 
-  shown.forEach(opt => {
+  // Build unique MCQ choices
+  const options = shuffleArray(
+    [correct, ...allOptions.filter(w => w !== correct)]
+  ).slice(0, count);
+
+  options.forEach(opt => {
     const btn = document.createElement('button');
     btn.textContent = opt;
     btn.className = 'mcq-btn';
-    btn.addEventListener('click', () => {
-      handleAnswer(opt, correct, q.id);
-    });
+    btn.addEventListener('click', () => handleAnswer(opt, correct, q.id));
     container.appendChild(btn);
   });
 }
 
 function handleAnswer(selected, correct, id) {
   const isCorrect = autoCheckMCQ(selected, correct);
+  const result = { id, selected, correct };
+
   if (isCorrect) {
     addXP(5);
-    logEvent('answer_correct', { id, selected });
+    logEvent('answer_correct', result);
   } else {
-    logEvent('answer_wrong', { id, selected, correct });
+    logEvent('answer_wrong', result);
   }
 
   answeredIDs.add(id);
@@ -122,12 +119,9 @@ function showCompletion() {
     <h2>✅ You've completed all MixLingo questions!</h2>
     <p>🎉 Great job! Try a new mode or replay again later.</p>
   `;
-
   logEvent('game_complete', { mode: 'MixLingo', total: answeredIDs.size });
 }
 
-// Helper
 function shuffleArray(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
-
