@@ -10,8 +10,11 @@ import { loadLanguage } from './ui/langManager.js';
 import { initFont } from './ui/fontManager.js';
 import { applyTheme } from './ui/themeManager.js';
 import { showMainMenu } from './main.js';
-import { renderHeader } from './ui/uiHeader.js';
-import { renderFooter } from './ui/uiFooter.js';
+//import { renderHeader } from './ui/uiHeader.js';
+//import { renderFooter } from './ui/uiFooter.js';
+
+import { renderAppHeader } from './uiHeader.js';
+import { renderAppFooter } from './uiFooter.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   initProfile();
@@ -21,10 +24,18 @@ window.addEventListener('DOMContentLoaded', async () => {
   const lang = localStorage.getItem('ui-lang') || 'en';
   await loadLanguage(lang);
 
-  renderHeader();
-  renderFooter();
+  //renderHeader();
+  //renderFooter();
+
+  renderAppHeader();
+  renderAppFooter();
+
 
 console.log('LingoQuest2 loaded. Showing main menu...');
 
   showMainMenu(); // ⬅️ This injects the MixLingo button
 });
+
+
+
+
