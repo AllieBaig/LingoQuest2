@@ -8,6 +8,6 @@
 
 export { logEvent } from './tools/eventLogger.js';
 export { addXP } from './profile/profileManager.js';
-export { autoCheckMCQ } from './mcqAutoCheck.js';
+export { autoCheckMCQ } from './utils/mcqAutoCheck.js';
 export { renderIngameHead } from './ui/ingameHead.js';
 export { renderIngameFoot } from './ui/ingameFoot.js';
