@@ -1,18 +1,17 @@
 
 /* 
 1) Purpose: Renders and manages the settings panel for LingoQuest2
-2) Features: Language, font, and theme selectors (senior-friendly, multilingual)
-3) Dependencies: langManager.js, themeManager.js, fontManager.js
-4) Related: minimal.css, themes.css, fonts.css
-5) Special: Uses i18n keys and emojis for intuitive selection
+2) Features: Language, font, and theme selectors (senior-friendly)
+3) Dependencies: themeManager.js, fontManager.js, langManager.js
+4) Related: profileManager.js, minimal.css, fonts.css, themes.css
+5) Special: Uses emoji-based dropdown hints, accessible layout
 6) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
-7) Timestamp: 2025-05-30 20:45 | File: js/ui/uiSettingsPanel.js
+7) Timestamp: 2025-05-30 20:30 | File: js/ui/uiSettingsPanel.js
 */
 
 import { loadLanguage } from './langManager.js';
 import { applyTheme } from './themeManager.js';
 import { applyFontChoice } from './fontManager.js';
-import { applyTranslations } from './langManager.js';
 
 export function renderSettingsPanel(containerId = 'menuArea') {
   const container = document.getElementById(containerId);
@@ -20,7 +19,7 @@ export function renderSettingsPanel(containerId = 'menuArea') {
   panel.id = 'settingsPanel';
   panel.innerHTML = `
     <div class="settings-block">
-      <label for="langSelect" data-i18n="language_label">Language:</label>
+      <label for="langSelect">🌐 Language:</label>
       <select id="langSelect">
         <option value="en">🇬🇧 English</option>
         <option value="fr">🇫🇷 Français</option>
@@ -29,7 +28,7 @@ export function renderSettingsPanel(containerId = 'menuArea') {
     </div>
 
     <div class="settings-block">
-      <label for="themeSelect" data-i18n="theme_label">Theme:</label>
+      <label for="themeSelect">🎨 Theme:</label>
       <select id="themeSelect">
         <option value="theme-windows98">💾 Windows 98</option>
         <option value="theme-windowsxp">🖼 Windows XP</option>
@@ -41,7 +40,7 @@ export function renderSettingsPanel(containerId = 'menuArea') {
     </div>
 
     <div class="settings-block">
-      <label for="fontSelect" data-i18n="font_label">Game Font:</label>
+      <label for="fontSelect">🔤 Game Font:</label>
       <select id="fontSelect">
         <option value="font-default">Sans-serif (Default)</option>
         <option value="font-serif">Serif (Georgia)</option>
@@ -59,15 +58,14 @@ export function renderSettingsPanel(containerId = 'menuArea') {
 
   container.appendChild(panel);
 
-  // Restore previously selected settings
+  // Apply saved selections
   document.getElementById('langSelect').value = localStorage.getItem('ui-lang') || 'en';
   document.getElementById('themeSelect').value = localStorage.getItem('theme') || 'theme-windowsxp';
   document.getElementById('fontSelect').value = localStorage.getItem('game-font') || 'font-default';
 
   // Event listeners
-  document.getElementById('langSelect').addEventListener('change', async (e) => {
-    await loadLanguage(e.target.value);
-    applyTranslations();
+  document.getElementById('langSelect').addEventListener('change', (e) => {
+    loadLanguage(e.target.value);
   });
 
   document.getElementById('themeSelect').addEventListener('change', (e) => {

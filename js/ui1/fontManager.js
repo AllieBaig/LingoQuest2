@@ -9,20 +9,7 @@
 7) Timestamp: 2025-05-30 20:15 | File: js/ui/fontManager.js
 */
 
-// const fontClasses = ['font-default', 'font-serif', 'font-handwritten', 'font-monospace'];
-
-const fontClasses = [
-  'font-default',
-  'font-serif',
-  'font-handwritten',
-  'font-monospace',
-  'font-tinos',
-  'font-crimson',
-  'font-source-serif',
-  'font-neuton',
-  'font-lora'
-];
-
+const fontClasses = ['font-default', 'font-serif', 'font-handwritten', 'font-monospace'];
 
 export function applyFontChoice(fontKey = 'font-default') {
   // Remove existing font classes
