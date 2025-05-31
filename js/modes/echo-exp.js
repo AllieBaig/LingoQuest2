@@ -6,7 +6,7 @@
 5) Timestamp: 2025-06-01 01:30 | File: js/modes/echo-exp.js
 */
 
-import { logEvent } from '../tools/eventLogger.js';
+//import { logEvent } from '../tools/eventLogger.js';
 import { addXP } from '../profile/profileManager.js';
 import { autoCheckMCQ } from '../utils/mcqAutoCheck.js';
 import { renderIngameHead } from '../ui/ingameHead.js';
