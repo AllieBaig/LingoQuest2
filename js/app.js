@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.getElementById('menuArea').innerHTML = '<h1>Hello from LingoQuest2!</h1>';
+
+
+
 
 
 
