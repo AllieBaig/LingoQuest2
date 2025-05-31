@@ -9,7 +9,8 @@
 
 import { logEvent } from '../tools/eventLogger.js';
 import { addXP } from '../profile/profileManager.js';
-import { autoCheckMCQ } from '../mcqAutoCheck.js';
+import { autoCheckMCQ } from '../utils/mcqAutoCheck.js';
+//import { autoCheckMCQ } from '../mcqAutoCheck.js';
 import { renderIngameHead } from '../ui/ingameHead.js';
 import { renderIngameFoot } from '../ui/ingameFoot.js';
 
