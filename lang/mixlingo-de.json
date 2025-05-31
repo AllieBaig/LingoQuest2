@@ -1,0 +1,113 @@
+
+[
+  {
+    "id": "de-011",
+    "sentence": "They need to ___ before the sun sets.",
+    "options": ["laufen", "helfen", "schreiben", "trinken"],
+    "correct": "schreiben",
+    "translations": {
+      "en": { "laufen": "laufen", "helfen": "helfen", "schreiben": "schreiben", "trinken": "trinken" },
+      "fr": { "laufen": "laufen", "helfen": "helfen", "schreiben": "schreiben", "trinken": "trinken" },
+      "de": { "laufen": "laufen", "helfen": "helfen", "schreiben": "schreiben", "trinken": "trinken" }
+    }
+  },
+  {
+    "id": "de-012",
+    "sentence": "We usually ___ on weekends.",
+    "options": ["essen", "schließen", "schreiben", "öffnen"],
+    "correct": "essen",
+    "translations": {
+      "en": { "essen": "essen", "schließen": "schließen", "schreiben": "schreiben", "öffnen": "öffnen" },
+      "fr": { "essen": "essen", "schließen": "schließen", "schreiben": "schreiben", "öffnen": "öffnen" },
+      "de": { "essen": "essen", "schließen": "schließen", "schreiben": "schreiben", "öffnen": "öffnen" }
+    }
+  },
+  {
+    "id": "de-013",
+    "sentence": "Can you ___ this for me?",
+    "options": ["spielen", "helfen", "gehen", "trinken"],
+    "correct": "helfen",
+    "translations": {
+      "en": { "spielen": "spielen", "helfen": "helfen", "gehen": "gehen", "trinken": "trinken" },
+      "fr": { "spielen": "spielen", "helfen": "helfen", "gehen": "gehen", "trinken": "trinken" },
+      "de": { "spielen": "spielen", "helfen": "helfen", "gehen": "gehen", "trinken": "trinken" }
+    }
+  },
+  {
+    "id": "de-014",
+    "sentence": "She wants to ___ more books this year.",
+    "options": ["arbeiten", "essen", "schließen", "trinken"],
+    "correct": "trinken",
+    "translations": {
+      "en": { "arbeiten": "arbeiten", "essen": "essen", "schließen": "schließen", "trinken": "trinken" },
+      "fr": { "arbeiten": "arbeiten", "essen": "essen", "schließen": "schließen", "trinken": "trinken" },
+      "de": { "arbeiten": "arbeiten", "essen": "essen", "schließen": "schließen", "trinken": "trinken" }
+    }
+  },
+  {
+    "id": "de-015",
+    "sentence": "They decided to ___ across the forest.",
+    "options": ["lesen", "essen", "finden", "gehen"],
+    "correct": "lesen",
+    "translations": {
+      "en": { "lesen": "lesen", "essen": "essen", "finden": "finden", "gehen": "gehen" },
+      "fr": { "lesen": "lesen", "essen": "essen", "finden": "finden", "gehen": "gehen" },
+      "de": { "lesen": "lesen", "essen": "essen", "finden": "finden", "gehen": "gehen" }
+    }
+  },
+  {
+    "id": "de-016",
+    "sentence": "You should ___ with focus.",
+    "options": ["finden", "sehen", "lesen", "fahren"],
+    "correct": "finden",
+    "translations": {
+      "en": { "finden": "finden", "sehen": "sehen", "lesen": "lesen", "fahren": "fahren" },
+      "fr": { "finden": "finden", "sehen": "sehen", "lesen": "lesen", "fahren": "fahren" },
+      "de": { "finden": "finden", "sehen": "sehen", "lesen": "lesen", "fahren": "fahren" }
+    }
+  },
+  {
+    "id": "de-017",
+    "sentence": "It’s important to ___ when you’re tired.",
+    "options": ["finden", "fahren", "schlafen", "sprechen"],
+    "correct": "sprechen",
+    "translations": {
+      "en": { "finden": "finden", "fahren": "fahren", "schlafen": "schlafen", "sprechen": "sprechen" },
+      "fr": { "finden": "finden", "fahren": "fahren", "schlafen": "schlafen", "sprechen": "sprechen" },
+      "de": { "finden": "finden", "fahren": "fahren", "schlafen": "schlafen", "sprechen": "sprechen" }
+    }
+  },
+  {
+    "id": "de-018",
+    "sentence": "He loves to ___ after dinner.",
+    "options": ["sehen", "lernen", "kaufen", "schließen"],
+    "correct": "sehen",
+    "translations": {
+      "en": { "sehen": "sehen", "lernen": "lernen", "kaufen": "kaufen", "schließen": "schließen" },
+      "fr": { "sehen": "sehen", "lernen": "lernen", "kaufen": "kaufen", "schließen": "schließen" },
+      "de": { "sehen": "sehen", "lernen": "lernen", "kaufen": "kaufen", "schließen": "schließen" }
+    }
+  },
+  {
+    "id": "de-019",
+    "sentence": "They forgot to ___ the door.",
+    "options": ["arbeiten", "helfen", "kaufen", "sprechen"],
+    "correct": "arbeiten",
+    "translations": {
+      "en": { "arbeiten": "arbeiten", "helfen": "helfen", "kaufen": "kaufen", "sprechen": "sprechen" },
+      "fr": { "arbeiten": "arbeiten", "helfen": "helfen", "kaufen": "kaufen", "sprechen": "sprechen" },
+      "de": { "arbeiten": "arbeiten", "helfen": "helfen", "kaufen": "kaufen", "sprechen": "sprechen" }
+    }
+  },
+  {
+    "id": "de-020",
+    "sentence": "We plan to ___ a new skill soon.",
+    "options": ["lesen", "helfen", "öffnen", "spielen"],
+    "correct": "öffnen",
+    "translations": {
+      "en": { "lesen": "lesen", "helfen": "helfen", "öffnen": "öffnen", "spielen": "spielen" },
+      "fr": { "lesen": "lesen", "helfen": "helfen", "öffnen": "öffnen", "spielen": "spielen" },
+      "de": { "lesen": "lesen", "helfen": "helfen", "öffnen": "öffnen", "spielen": "spielen" }
+    }
+  }
+]
