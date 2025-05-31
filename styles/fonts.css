@@ -32,6 +32,17 @@ body.font-neuton {
 
 body.font-lora {
   font-family: 'Lora', serif;
+
+
+  /* Sans Forgetica Custom Font */
+@font-face {
+  font-family: 'Sans Forgetica';
+  src: url('../fonts/sans-forgetica.regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+  
 }
 
 
