@@ -33,7 +33,7 @@ export function showMainMenu() {
   echoExpBtn.id = 'echoExpBtn';
   echoExpBtn.textContent = '🗺️ Echo Expedition';
   echoExpBtn.addEventListener('click', async () => {
-    logEvent('button_click', { id: 'echoExpBtn', label: 'Echo Expedition' });
+    //logEvent('button_click', { id: 'echoExpBtn', label: 'Echo Expedition' });
     const mode = await loadMode('echoexp');
     mode.start();
   });
