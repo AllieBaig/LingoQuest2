@@ -1,17 +1,162 @@
-
-{
-  "theme": "Migrations of the Mistlands",
-  "coreLetter": "M",
-  "clues": {
-    "name": "Their name was passed down like a mountain wind, starting with M and common in their homeland.",
-    "place": "They came from a misty region whose name begins with M — a land now silent.",
-    "animal": "A loyal companion followed them, strong-hoofed and steady, bearing the mark of M.",
-    "thing": "What they carried was sacred. An object of M, wrapped in bark and mystery."
+[
+  {
+    "theme": "Migrations of the Mistlands",
+    "coreLetter": "M",
+    "clues": {
+      "name": "Their name was passed down like a mountain wind, starting with M and common in their homeland.",
+      "place": "They came from a misty region whose name begins with M — a land now silent.",
+      "animal": "A loyal companion followed them, strong-hoofed and steady, bearing the mark of M.",
+      "thing": "What they carried was sacred. An object of M, wrapped in bark and mystery."
+    },
+    "answers": {
+      "name": "Mira",
+      "place": "Mistral",
+      "animal": "Mule",
+      "thing": "Mask"
+    }
   },
-  "answers": {
-    "name": "Mira",
-    "place": "Mistral",
-    "animal": "Mule",
-    "thing": "Mask"
+  {
+    "theme": "Sands of the Sahari",
+    "coreLetter": "S",
+    "clues": {
+      "name": "A name that whispers through dunes, soft and strong, starting with S.",
+      "place": "They hailed from the southern sands, where the sun scorched the start of every story with S.",
+      "animal": "Their protector slithered through shadows, scaled and silent.",
+      "thing": "Wrapped in satchels, their sacred object shimmered — a stone of stories."
+    },
+    "answers": {
+      "name": "Sahir",
+      "place": "Sahara",
+      "animal": "Snake",
+      "thing": "Stone"
+    }
+  },
+  {
+    "theme": "Whispers of the Woodland",
+    "coreLetter": "W",
+    "clues": {
+      "name": "Like wind through willows, their name wandered from tongue to tongue.",
+      "place": "Where woods weave their green spell — this place begins with W.",
+      "animal": "A creature of bark and howl, their companion watched from shadows.",
+      "thing": "A carved whistle, once blown by elders, hidden in woven wraps."
+    },
+    "answers": {
+      "name": "Wyn",
+      "place": "Weldan",
+      "animal": "Wolf",
+      "thing": "Whistle"
+    }
+  },
+  {
+    "theme": "Echoes of the Eastern Steppes",
+    "coreLetter": "T",
+    "clues": {
+      "name": "Thunder in their step, their name traveled far with tales — and it began with T.",
+      "place": "The great plains they called home bore a name like thunder.",
+      "animal": "A fleet-footed companion, tufted and tireless.",
+      "thing": "In their satchel, a token of trust: a talisman wrapped in tradition."
+    },
+    "answers": {
+      "name": "Tarek",
+      "place": "Tundra",
+      "animal": "Tiger",
+      "thing": "Talisman"
+    }
+  },
+  {
+    "theme": "Legends of the Lunar Isles",
+    "coreLetter": "L",
+    "clues": {
+      "name": "Their name lingered like moonlight over the ocean — it began with L.",
+      "place": "An isle lost to tides and time, whispered as L.",
+      "animal": "Gliding through salt and spray, their ally leaped and laughed.",
+      "thing": "An ancient lantern, lit only during lunar rites."
+    },
+    "answers": {
+      "name": "Liora",
+      "place": "Lunara",
+      "animal": "Leopard",
+      "thing": "Lantern"
+    }
+  },
+  {
+    "theme": "Flames of the Forgotten Forge",
+    "coreLetter": "Q",
+    "clues": {
+      "name": "Their name began with Q, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with Q, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by Q, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of Q."
+    },
+    "answers": {
+      "name": "Qara",
+      "place": "Qanora",
+      "animal": "Qeagle",
+      "thing": "Qeather"
+    }
+  },
+  {
+    "theme": "Hymns of the Highland Nomads",
+    "coreLetter": "M",
+    "clues": {
+      "name": "Their name began with M, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with M, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by M, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of M."
+    },
+    "answers": {
+      "name": "Mara",
+      "place": "Manora",
+      "animal": "Meagle",
+      "thing": "Meather"
+    }
+  },
+  {
+    "theme": "Dunes of the Dreaming Empire",
+    "coreLetter": "J",
+    "clues": {
+      "name": "Their name began with J, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with J, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by J, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of J."
+    },
+    "answers": {
+      "name": "Jara",
+      "place": "Janora",
+      "animal": "Jeagle",
+      "thing": "Jeather"
+    }
+  },
+  {
+    "theme": "Cries of the Crystal Forest",
+    "coreLetter": "Z",
+    "clues": {
+      "name": "Their name began with Z, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with Z, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by Z, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of Z."
+    },
+    "answers": {
+      "name": "Zara",
+      "place": "Zanora",
+      "animal": "Zeagle",
+      "thing": "Zeather"
+    }
+  },
+  {
+    "theme": "Scrolls of the Sunken Kingdom",
+    "coreLetter": "T",
+    "clues": {
+      "name": "Their name began with T, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with T, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by T, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of T."
+    },
+    "answers": {
+      "name": "Tara",
+      "place": "Tanora",
+      "animal": "Teagle",
+      "thing": "Teather"
+    }
   }
-}
+]
