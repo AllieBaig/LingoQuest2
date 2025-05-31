@@ -1,0 +1,17 @@
+
+{
+  "theme": "Migrations of the Mistlands",
+  "coreLetter": "M",
+  "clues": {
+    "name": "Their name was passed down like a mountain wind, starting with M and common in their homeland.",
+    "place": "They came from a misty region whose name begins with M — a land now silent.",
+    "animal": "A loyal companion followed them, strong-hoofed and steady, bearing the mark of M.",
+    "thing": "What they carried was sacred. An object of M, wrapped in bark and mystery."
+  },
+  "answers": {
+    "name": "Mira",
+    "place": "Mistral",
+    "animal": "Mule",
+    "thing": "Mask"
+  }
+}
