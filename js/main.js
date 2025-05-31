@@ -30,4 +30,6 @@ export function showMainMenu() {
 }
 
 console.log('✅ showMainMenu() called — menu injected');
+console.log('✅ showMainMenu is executing.');
+menu.style.border = '2px solid lime'; // visual proof it's alive
 
