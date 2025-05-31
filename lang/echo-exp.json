@@ -159,4 +159,170 @@
       "thing": "Teather"
     }
   }
+  
+
+  {
+    "theme": "Ashes of the Ancients",
+    "coreLetter": "K",
+    "clues": {
+      "name": "Their name began with K, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with K, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by K, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of K."
+    },
+    "answers": {
+      "name": "Kara",
+      "place": "Kanora",
+      "animal": "Keagle",
+      "thing": "Keather"
+    }
+  },
+  {
+    "theme": "Drums of the Distant Veldt",
+    "coreLetter": "X",
+    "clues": {
+      "name": "Their name began with X, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with X, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by X, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of X."
+    },
+    "answers": {
+      "name": "Xara",
+      "place": "Xanora",
+      "animal": "Xeagle",
+      "thing": "Xeather"
+    }
+  },
+  {
+    "theme": "Runes of the Rainborn",
+    "coreLetter": "A",
+    "clues": {
+      "name": "Their name began with A, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with A, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by A, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of A."
+    },
+    "answers": {
+      "name": "Ara",
+      "place": "Anora",
+      "animal": "Aeagle",
+      "thing": "Aeather"
+    }
+  },
+  {
+    "theme": "Voices of the Vanished Valley",
+    "coreLetter": "V",
+    "clues": {
+      "name": "Their name began with V, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with V, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by V, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of V."
+    },
+    "answers": {
+      "name": "Vara",
+      "place": "Vanora",
+      "animal": "Veagle",
+      "thing": "Veather"
+    }
+  },
+  {
+    "theme": "Songs of the Skybound Seers",
+    "coreLetter": "F",
+    "clues": {
+      "name": "Their name began with F, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with F, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by F, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of F."
+    },
+    "answers": {
+      "name": "Fara",
+      "place": "Fanora",
+      "animal": "Feagle",
+      "thing": "Feather"
+    }
+  },
+  {
+    "theme": "Fables of the Feathered Throne",
+    "coreLetter": "C",
+    "clues": {
+      "name": "Their name began with C, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with C, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by C, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of C."
+    },
+    "answers": {
+      "name": "Cara",
+      "place": "Canora",
+      "animal": "Ceagle",
+      "thing": "Ceather"
+    }
+  },
+  {
+    "theme": "Bloodlines of the Broken Banner",
+    "coreLetter": "D",
+    "clues": {
+      "name": "Their name began with D, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with D, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by D, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of D."
+    },
+    "answers": {
+      "name": "Dara",
+      "place": "Danora",
+      "animal": "Deagle",
+      "thing": "Deather"
+    }
+  },
+  {
+    "theme": "Shadows of the Shifting Sands",
+    "coreLetter": "N",
+    "clues": {
+      "name": "Their name began with N, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with N, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by N, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of N."
+    },
+    "answers": {
+      "name": "Nara",
+      "place": "Nanora",
+      "animal": "Neagle",
+      "thing": "Neather"
+    }
+  },
+  {
+    "theme": "Tales of the Thunder People",
+    "coreLetter": "U",
+    "clues": {
+      "name": "Their name began with U, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with U, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by U, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of U."
+    },
+    "answers": {
+      "name": "Ura",
+      "place": "Unora",
+      "animal": "Ueagle",
+      "thing": "Ueather"
+    }
+  },
+  {
+    "theme": "Marks of the Moonbound",
+    "coreLetter": "H",
+    "clues": {
+      "name": "Their name began with H, carried by stories whispered around campfires.",
+      "place": "A land lost in time, its name starting with H, remembered by wandering maps.",
+      "animal": "A companion of instinct and motion, marked by H, roamed beside them.",
+      "thing": "An heirloom, hidden in cloth, carried the essence of H."
+    },
+    "answers": {
+      "name": "Hara",
+      "place": "Hanora",
+      "animal": "Heagle",
+      "thing": "Heather"
+    }
+  }
 ]
+  
+  
+  
+
