@@ -1,96 +1,130 @@
 /* 
-1) Purpose: Handles MixLingo game mode logic
-2) Features: Loads sentences, shows MCQs in selected language, prevents repeats
-3) Dependencies: questionPool.js, mcqAutoCheck.js, langManager.js
-4) Related: Controlled by dropdown in ingameFoot.js (Answers In Language)
-5) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
-6) Timestamp: 2025-05-31 14:10 | File: js/modes/mixlingo.js
+1) Purpose: MixLingo game mode (fill-in-the-blank with foreign word)
+2) Features: MCQs by difficulty, answer language toggle, XP, no repeats
+3) Dependencies: questionPool.js, mcqAutoCheck.js, profileManager.js, eventLogger.js
+4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
+5) Timestamp: 2025-05-31 23:59 | File: js/modes/mixlingo.js
 */
 
-import { getMixLingoQuestions } from '../utils/questionPool.js';
-import { autoAttachMCQEvents } from '../utils/mcqAutoCheck.js';
+import { getMixLingoQuestions } from '../questionPool.js';
+import { autoCheckMCQ } from '../mcqAutoCheck.js';
+import { addXP } from '../profile/profileManager.js';
+import { logEvent } from '../tools/eventLogger.js';
+import { renderIngameHead } from '../ui/ingameHead.js';
+import { renderIngameFoot } from '../ui/ingameFoot.js';
 
-let allQuestions = [];
+let currentIndex = 0;
+let questionPool = [];
+let answeredIDs = new Set();
+let currentAnswerLang = localStorage.getItem('answerLang') || 'en';
 let currentQuestion = null;
-let ansSet = new Set(); // Prevent repeats
-let answerLang = localStorage.getItem('answer-lang') || 'en'; // 'en', 'fr', 'de'
+let difficulty = localStorage.getItem('game-difficulty') || 'medium';
+
+const optionCount = {
+  easy: 2,
+  medium: 3,
+  hard: 4
+};
+
+document.addEventListener('answerLangChanged', (e) => {
+  currentAnswerLang = e.detail;
+  if (currentQuestion) {
+    updateMCQAnswers(currentQuestion);
+  }
+});
 
 export async function startMixLingo() {
   const gameArea = document.getElementById('gameArea');
-  gameArea.hidden = false;
   gameArea.innerHTML = '';
+  gameArea.hidden = false;
 
-  ansSet = new Set(); // reset on new session
+  renderIngameHead();
+  renderIngameFoot();
 
-  allQuestions = await getMixLingoQuestions(); // combined pool
+  questionPool = await getMixLingoQuestions();
+  currentIndex = 0;
+  answeredIDs.clear();
+
   loadNextQuestion();
-
-  // Setup dropdown listener for answer language changes
-  const answerLangDropdown = document.getElementById('answerLangDropdown');
-  if (answerLangDropdown) {
-    answerLangDropdown.addEventListener('change', (e) => {
-      answerLang = e.target.value;
-      localStorage.setItem('answer-lang', answerLang);
-      if (currentQuestion) updateMCQOptions(currentQuestion); // reload options only
-    });
-  }
+  logEvent('game_start', { mode: 'MixLingo', difficulty });
 }
 
 function loadNextQuestion() {
-  const remaining = allQuestions.filter(q => !ansSet.has(q.id));
-  const gameArea = document.getElementById('gameArea');
-
-  if (remaining.length === 0) {
-    gameArea.innerHTML = '<p>🎉 All questions completed. Great job!</p>';
+  if (answeredIDs.size >= questionPool.length) {
+    showCompletion();
     return;
   }
 
-  const randomQ = remaining[Math.floor(Math.random() * remaining.length)];
-  currentQuestion = randomQ;
-  renderQuestion(randomQ);
+  let q;
+  do {
+    q = questionPool[Math.floor(Math.random() * questionPool.length)];
+  } while (answeredIDs.has(q.id));
+
+  currentQuestion = q;
+  renderQuestion(q);
 }
 
 function renderQuestion(q) {
-  const gameArea = document.getElementById('gameArea');
-  gameArea.innerHTML = '';
+  const builder = document.getElementById('sentenceBuilderArea');
+  builder.innerHTML = '';
 
-  const cluePara = document.createElement('p');
-  cluePara.innerHTML = `🧠 <strong>Complete:</strong> ${q.sentence.replace('___', '____')}`;
+  const clue = document.createElement('p');
+  clue.textContent = q.sentence.replace('___', '_____');
+  builder.appendChild(clue);
 
-  const mcqContainer = document.createElement('div');
-  mcqContainer.id = 'mcqArea';
+  const optionsContainer = document.createElement('div');
+  optionsContainer.id = 'mcqOptions';
+  builder.appendChild(optionsContainer);
 
-  q.options.forEach((opt, i) => {
+  updateMCQAnswers(q);
+}
+
+function updateMCQAnswers(q) {
+  const container = document.getElementById('mcqOptions');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const allOptions = q.answers[currentAnswerLang] || [];
+  const correct = q.correct[currentAnswerLang];
+  const count = optionCount[difficulty];
+  const shown = shuffleArray([correct, ...allOptions.filter(w => w !== correct)]).slice(0, count);
+
+  shown.forEach(opt => {
     const btn = document.createElement('button');
-    btn.className = 'mcqOption';
-    btn.setAttribute('data-correct', opt === q.correct);
-    btn.setAttribute('data-option', opt);
-    btn.textContent = opt; // Will be replaced by answerLang if needed
-    mcqContainer.appendChild(btn);
-  });
-
-  gameArea.appendChild(cluePara);
-  gameArea.appendChild(mcqContainer);
-
-  autoAttachMCQEvents(mcqContainer, (isCorrect, selectedText) => {
-    if (isCorrect) {
-      ansSet.add(q.id);
-      setTimeout(() => loadNextQuestion(), 1000);
-    }
-  });
-
-  updateMCQOptions(q); // immediately apply language setting
-}
-
-function updateMCQOptions(q) {
-  const buttons = document.querySelectorAll('#mcqArea .mcqOption');
-  buttons.forEach((btn) => {
-    const base = btn.getAttribute('data-option');
-    // Replace with foreign word in selected language if available
-    if (q.translations && q.translations[answerLang] && q.translations[answerLang][base]) {
-      btn.textContent = q.translations[answerLang][base];
-    } else {
-      btn.textContent = base;
-    }
+    btn.textContent = opt;
+    btn.className = 'mcq-btn';
+    btn.addEventListener('click', () => {
+      handleAnswer(opt, correct, q.id);
+    });
+    container.appendChild(btn);
   });
 }
+
+function handleAnswer(selected, correct, id) {
+  const isCorrect = autoCheckMCQ(selected, correct);
+  if (isCorrect) {
+    addXP(5);
+    logEvent('answer_correct', { id, selected });
+  } else {
+    logEvent('answer_wrong', { id, selected, correct });
+  }
+
+  answeredIDs.add(id);
+  setTimeout(loadNextQuestion, 500);
+}
+
+function showCompletion() {
+  const builder = document.getElementById('sentenceBuilderArea');
+  builder.innerHTML = `
+    <h2>✅ You've completed all MixLingo questions!</h2>
+    <p>🎉 Great job! Try a new mode or replay again later.</p>
+  `;
+
+  logEvent('game_complete', { mode: 'MixLingo', total: answeredIDs.size });
+}
+
+// Helper
+function shuffleArray(arr) {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
