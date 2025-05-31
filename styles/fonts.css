@@ -1,0 +1,66 @@
+
+/* 
+1) Purpose: Defines font-family classes for game UI
+2) Features: Google Fonts + local Sans Forgetica font
+3) Related: Applied via body class (e.g., body.font-lora)
+4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
+5) Timestamp: 2025-06-01 02:45 | File: styles/fonts.css
+*/
+
+/* 🔠 Register local Sans Forgetica font */
+@font-face {
+  font-family: 'Sans Forgetica';
+  src: url('../fonts/sans-forgetica.regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 🌐 Google Font + System Font Options */
+body.font-default {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body.font-serif {
+  font-family: 'Georgia', serif;
+}
+
+body.font-handwritten {
+  font-family: 'Comic Sans MS', cursive;
+}
+
+body.font-monospace {
+  font-family: 'Courier New', monospace;
+}
+
+body.font-tinos {
+  font-family: 'Tinos', serif;
+}
+
+body.font-crimson {
+  font-family: 'Crimson Text', serif;
+}
+
+body.font-source-serif {
+  font-family: 'Source Serif Pro', serif;
+}
+
+body.font-neuton {
+  font-family: 'Neuton', serif;
+}
+
+body.font-lora {
+  font-family: 'Lora', serif;
+}
+
+body.font-sans-forgetica {
+  font-family: 'Sans Forgetica', serif;
+}
+
+/* 🧠 Adjustable font size for gameplay */
+:root {
+  --game-font-size: 24px;
+}
+
+#gameArea {
+  font-size: var(--game-font-size);
+}
