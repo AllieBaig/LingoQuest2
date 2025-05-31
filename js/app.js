@@ -15,6 +15,10 @@ import { showMainMenu } from './main.js';
 import { renderFooter as renderAppFooter } from './ui/uiFooter.js';
 import { renderHeader as renderAppHeader } from './ui/uiHeader.js';
 
+//import { renderFooter as renderAppFooter as appFooter } from './ui/uiFooter.js';
+//import { renderHeader as renderAppHeader as appHeader } from './ui/uiHeader.js';
+
+//appHeader
 
 //import { renderResult as renderSummary } from '../../utils/asciiRenderer.js';
 
