@@ -36,11 +36,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   const lang = localStorage.getItem('ui-lang') || 'en';
   await loadLanguage(lang);
 
-  renderHeader();
-  renderFooter();
+  //renderHeader();
+  //renderFooter();
 
-  //renderAppHeader();
-  //renderAppFooter();
+  renderAppHeader();
+  renderAppFooter();
 
 
 console.log('LingoQuest2 loaded. Showing main menu...');
