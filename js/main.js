@@ -28,3 +28,6 @@ export function showMainMenu() {
   menu.appendChild(heading);
   menu.appendChild(mixLingoBtn);
 }
+
+console.log('✅ showMainMenu() called — menu injected');
+
