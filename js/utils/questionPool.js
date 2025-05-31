@@ -1,4 +1,3 @@
-
 /* 
 1) Purpose: Loads question pools for all game modes
 2) Features: Supports MixLingo multi-language pools
@@ -8,23 +7,6 @@
 6) Timestamp: 2025-05-31 18:45 | File: js/utils/questionPool.js
 */
 
-/*
-// 🔤 Get all MixLingo questions combined (from en, fr, de)
-export async function getMixLingoQuestions() {
-  const langs = ['en', 'fr', 'de'];
-  const all = [];
-
-  for (let lang of langs) {
-    try {
-      const res = await fetch(`lang/mixlingo-${lang}.json`);
-      const data = await res.json();
-      all.push(...data);
-    } catch (e) {
-      console.warn(`⚠️ Failed to load mixlingo-${lang}.json`, e);
-    }
-  }
-  */
-
 export async function getMixLingoQuestions() {
   const langs = ['en', 'fr', 'de'];
   const all = [];
@@ -39,16 +21,9 @@ export async function getMixLingoQuestions() {
     }
   }
 
-  // Shuffle once to mix all languages
-  return all.sort(() => Math.random() - 0.5);
-}
-
-
-  // Optional: Shuffle the pool randomly
   return shuffleArray(all);
 }
 
-// 🎲 Simple shuffle (Fisher-Yates)
 function shuffleArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
