@@ -25,6 +25,20 @@ export function showMainMenu() {
     startMixLingo();
   });
 
+
+// 🗺️ Echo Expedition Button
+  const echoBtn = document.createElement('button');
+  echoBtn.id = 'echoExpBtn';
+  echoBtn.textContent = '🗺️ Echo Expedition';
+  echoBtn.addEventListener('click', async () => {
+    logEvent('button_click', { id: 'echoExpBtn', label: 'Echo Expedition' });
+    const { startEchoExpedition } = await import('./modes/echo-exp.js');
+    startEchoExpedition();
+  });
+
+ 
+
+
   menu.appendChild(heading);
   menu.appendChild(mixLingoBtn);
 
