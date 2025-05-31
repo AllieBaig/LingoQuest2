@@ -1,5 +1,119 @@
 
 [
+
+  
+  {
+    "id": "de-001",
+    "sentence": "Let's ___ to the market before it closes.",
+    "options": ["sehen", "essen", "fahren", "kommen"],
+    "correct": "kommen",
+    "translations": {
+      "en": { "sehen": "sehen", "essen": "essen", "fahren": "fahren", "kommen": "kommen" },
+      "fr": { "sehen": "sehen", "essen": "essen", "fahren": "fahren", "kommen": "kommen" },
+      "de": { "sehen": "sehen", "essen": "essen", "fahren": "fahren", "kommen": "kommen" }
+    }
+  },
+  {
+    "id": "de-002",
+    "sentence": "They like to ___ when it's raining.",
+    "options": ["kommen", "laufen", "kaufen", "sehen"],
+    "correct": "sehen",
+    "translations": {
+      "en": { "kommen": "kommen", "laufen": "laufen", "kaufen": "kaufen", "sehen": "sehen" },
+      "fr": { "kommen": "kommen", "laufen": "laufen", "kaufen": "kaufen", "sehen": "sehen" },
+      "de": { "kommen": "kommen", "laufen": "laufen", "kaufen": "kaufen", "sehen": "sehen" }
+    }
+  },
+  {
+    "id": "de-003",
+    "sentence": "She must ___ her book today.",
+    "options": ["verkaufen", "spielen", "helfen", "kaufen"],
+    "correct": "verkaufen",
+    "translations": {
+      "en": { "verkaufen": "verkaufen", "spielen": "spielen", "helfen": "helfen", "kaufen": "kaufen" },
+      "fr": { "verkaufen": "verkaufen", "spielen": "spielen", "helfen": "helfen", "kaufen": "kaufen" },
+      "de": { "verkaufen": "verkaufen", "spielen": "spielen", "helfen": "helfen", "kaufen": "kaufen" }
+    }
+  },
+  {
+    "id": "de-004",
+    "sentence": "You should ___ slowly after lunch.",
+    "options": ["schreiben", "trinken", "gehen", "kaufen"],
+    "correct": "kaufen",
+    "translations": {
+      "en": { "schreiben": "schreiben", "trinken": "trinken", "gehen": "gehen", "kaufen": "kaufen" },
+      "fr": { "schreiben": "schreiben", "trinken": "trinken", "gehen": "gehen", "kaufen": "kaufen" },
+      "de": { "schreiben": "schreiben", "trinken": "trinken", "gehen": "gehen", "kaufen": "kaufen" }
+    }
+  },
+  {
+    "id": "de-005",
+    "sentence": "He wants to ___ before school.",
+    "options": ["laufen", "lesen", "trinken", "schließen"],
+    "correct": "lesen",
+    "translations": {
+      "en": { "laufen": "laufen", "lesen": "lesen", "trinken": "trinken", "schließen": "schließen" },
+      "fr": { "laufen": "laufen", "lesen": "lesen", "trinken": "trinken", "schließen": "schließen" },
+      "de": { "laufen": "laufen", "lesen": "lesen", "trinken": "trinken", "schließen": "schließen" }
+    }
+  },
+  {
+    "id": "de-006",
+    "sentence": "We often ___ on holidays.",
+    "options": ["kommen", "sprechen", "schließen", "helfen"],
+    "correct": "helfen",
+    "translations": {
+      "en": { "kommen": "kommen", "sprechen": "sprechen", "schließen": "schließen", "helfen": "helfen" },
+      "fr": { "kommen": "kommen", "sprechen": "sprechen", "schließen": "schließen", "helfen": "helfen" },
+      "de": { "kommen": "kommen", "sprechen": "sprechen", "schließen": "schließen", "helfen": "helfen" }
+    }
+  },
+  {
+    "id": "de-007",
+    "sentence": "They decided to ___ at sunrise.",
+    "options": ["öffnen", "essen", "schlafen", "schließen"],
+    "correct": "essen",
+    "translations": {
+      "en": { "öffnen": "öffnen", "essen": "essen", "schlafen": "schlafen", "schließen": "schließen" },
+      "fr": { "öffnen": "öffnen", "essen": "essen", "schlafen": "schlafen", "schließen": "schließen" },
+      "de": { "öffnen": "öffnen", "essen": "essen", "schlafen": "schlafen", "schließen": "schließen" }
+    }
+  },
+  {
+    "id": "de-008",
+    "sentence": "Can you ___ the window please?",
+    "options": ["verkaufen", "schreiben", "lernen", "trinken"],
+    "correct": "lernen",
+    "translations": {
+      "en": { "verkaufen": "verkaufen", "schreiben": "schreiben", "lernen": "lernen", "trinken": "trinken" },
+      "fr": { "verkaufen": "verkaufen", "schreiben": "schreiben", "lernen": "lernen", "trinken": "trinken" },
+      "de": { "verkaufen": "verkaufen", "schreiben": "schreiben", "lernen": "lernen", "trinken": "trinken" }
+    }
+  },
+  {
+    "id": "de-009",
+    "sentence": "We love to ___ every evening.",
+    "options": ["spielen", "verkaufen", "sprechen", "fahren"],
+    "correct": "fahren",
+    "translations": {
+      "en": { "spielen": "spielen", "verkaufen": "verkaufen", "sprechen": "sprechen", "fahren": "fahren" },
+      "fr": { "spielen": "spielen", "verkaufen": "verkaufen", "sprechen": "sprechen", "fahren": "fahren" },
+      "de": { "spielen": "spielen", "verkaufen": "verkaufen", "sprechen": "sprechen", "fahren": "fahren" }
+    }
+  },
+  {
+    "id": "de-010",
+    "sentence": "Don't forget to ___ before dinner.",
+    "options": ["schreiben", "essen", "kommen", "verkaufen"],
+    "correct": "schreiben",
+    "translations": {
+      "en": { "schreiben": "schreiben", "essen": "essen", "kommen": "kommen", "verkaufen": "verkaufen" },
+      "fr": { "schreiben": "schreiben", "essen": "essen", "kommen": "kommen", "verkaufen": "verkaufen" },
+      "de": { "schreiben": "schreiben", "essen": "essen", "kommen": "kommen", "verkaufen": "verkaufen" }
+    }
+  }
+
+  
   {
     "id": "de-011",
     "sentence": "They need to ___ before the sun sets.",
