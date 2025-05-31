@@ -19,6 +19,7 @@ export async function startMixLingo() {
   menuArea.hidden = true;
   gameArea.hidden = false;
 
+  /*
   gameArea.innerHTML = `
     <h2>🌍 Welcome to MixLingo Mode</h2>
     <p id="mixSentence"></p>
@@ -29,6 +30,29 @@ export async function startMixLingo() {
     </div>
     <div style="margin-top: 1rem;" id="xpStatus"></div>
   `;
+  */
+
+  gameArea.innerHTML = `
+  <h2>🌍 Welcome to MixLingo Mode</h2>
+
+  <div style="margin-bottom: 1rem;">
+    <label for="answerLangSelect"><strong>Answers in Language:</strong></label>
+    <select id="answerLangSelect">
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 French</option>
+      <option value="de">🇩🇪 German</option>
+    </select>
+  </div>
+
+  <p id="mixSentence"></p>
+  <div id="mcqOptions"></div>
+  <div id="mixFeedback" style="margin-top: 1rem;"></div>
+
+  <div style="margin-top: 2rem;">
+    <button id="backToMenuBtn">🔙 Back to Menu</button>
+  </div>
+  <div style="margin-top: 1rem;" id="xpStatus"></div>
+`;
 
   document.getElementById('backToMenuBtn').addEventListener('click', () => {
     location.reload(); // temporary simple reset
