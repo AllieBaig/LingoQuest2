@@ -6,7 +6,7 @@
 5) Timestamp: 2025-05-31 23:59 | File: js/modes/mixlingo.js
 */
 
-import { getMixLingoQuestions } from '../questionPool.js';
+import { getMixLingoQuestions } from '../utils/questionPool.js';
 import { autoCheckMCQ } from '../mcqAutoCheck.js';
 import { addXP } from '../profile/profileManager.js';
 import { logEvent } from '../tools/eventLogger.js';
