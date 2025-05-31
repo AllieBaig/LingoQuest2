@@ -88,6 +88,33 @@ function renderClue(stageIndex) {
   });
 }
 
+
+function renderResult() {
+  const gameArea = document.getElementById('gameArea');
+  gameArea.innerHTML = `
+    <h2>🎉 Identity Restored!</h2>
+    <p>You’ve pieced together the echoes of the past.</p>
+    <ul>
+      ${categories.map(cat => {
+        const ans = expedition.answers[cat];
+        return `<li><strong>${cat}:</strong> ${ans}</li>`;
+      }).join('')}
+    </ul>
+    <p>✨ XP updated. Well done, traveler.</p>
+    <div style="margin-top: 2rem;">
+      <button id="backToMenuBtn">🔙 Back to Menu</button>
+    </div>
+  `;
+
+  document.getElementById('backToMenuBtn').addEventListener('click', () => {
+    gameArea.hidden = true;
+    import('../main.js').then(({ showMainMenu }) => showMainMenu());
+  });
+}
+
+
+/*
+
 function renderResult() {
   const gameArea = document.getElementById('gameArea');
   gameArea.innerHTML = `
@@ -103,3 +130,5 @@ function renderResult() {
     <button onclick="location.reload()">🔁 Return</button>
   `;
 }
+
+*/
