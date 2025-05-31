@@ -12,8 +12,11 @@ import { applyTheme } from './ui/themeManager.js';
 import { showMainMenu } from './main.js';
 //import { renderHeader } from './ui/uiHeader.js';
 //import { renderFooter } from './ui/uiFooter.js';
-import { renderFooter as renderAppFooter } from './ui/uiFooter.js';
-import { renderHeader as renderAppHeader } from './ui/uiHeader.js';
+//import { renderFooter as renderAppFooter } from './ui/uiFooter.js';
+//import { renderHeader as renderAppHeader } from './ui/uiHeader.js';
+
+import { renderAppFooter } from './ui/uiFooter.js';
+import { renderAppHeader } from './ui/uiHeader.js';
 
 //import { renderFooter as renderAppFooter as appFooter } from './ui/uiFooter.js';
 //import { renderHeader as renderAppHeader as appHeader } from './ui/uiHeader.js';
