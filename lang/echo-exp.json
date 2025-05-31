@@ -1,0 +1,23 @@
+
+{
+  "theme": "Mountain Tribe",
+  "letter": "M",
+  "prompts": {
+    "name": "Their name was passed down like a mountain wind...",
+    "place": "They came from a misty region...",
+    "animal": "A loyal companion followed them...",
+    "thing": "What they carried was sacred..."
+  },
+  "answers": {
+    "name": "Milo",
+    "place": "Montara",
+    "animal": "Mustang",
+    "thing": "Mask"
+  },
+  "choices": {
+    "name": ["Milo", "Mina", "Marek", "Mira"],
+    "place": ["Montara", "Moscow", "Mali", "Mordor"],
+    "animal": ["Mustang", "Mule", "Mink", "Magpie"],
+    "thing": ["Mask", "Map", "Mat", "Mirror"]
+  }
+}
