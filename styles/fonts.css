@@ -12,3 +12,26 @@ body.font-handwritten {
 body.font-monospace {
   font-family: 'Courier New', monospace;
 }
+
+
+body.font-tinos {
+  font-family: 'Tinos', serif;
+}
+
+body.font-crimson {
+  font-family: 'Crimson Text', serif;
+}
+
+body.font-source-serif {
+  font-family: 'Source Serif Pro', serif;
+}
+
+body.font-neuton {
+  font-family: 'Neuton', serif;
+}
+
+body.font-lora {
+  font-family: 'Lora', serif;
+}
+
+
