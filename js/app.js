@@ -32,7 +32,12 @@ const savedLang = localStorage.getItem('ui-lang') || 'en';
 });
 
 
-
+/* js/app.js */
+document.addEventListener('DOMContentLoaded', () => {
+  const menuArea = document.getElementById('menuArea');
+  menuArea.innerHTML = `<h1>👋 Welcome to LingoQuest2</h1>
+    <p>Please choose a mode or visit settings.</p>`;
+});
 
 
 
