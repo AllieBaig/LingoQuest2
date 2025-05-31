@@ -1,0 +1,128 @@
+
+[
+  {
+    "sentence": "She picked up the ___ from the table.",
+    "options": ["livre", "chaise", "chien"],
+    "answer": "livre"
+  },
+  {
+    "sentence": "He took his ___ to school every day.",
+    "options": ["sac", "fromage", "porte"],
+    "answer": "sac"
+  },
+  {
+    "sentence": "The ___ barked loudly at night.",
+    "options": ["chat", "chien", "stylo"],
+    "answer": "chien"
+  },
+  {
+    "sentence": "I need a ___ to write this down.",
+    "options": ["stylo", "fenêtre", "chaussure"],
+    "answer": "stylo"
+  },
+  {
+    "sentence": "The cat jumped through the ___.",
+    "options": ["porte", "fenêtre", "étoile"],
+    "answer": "fenêtre"
+  },
+  {
+    "sentence": "My mom bought fresh ___ from the market.",
+    "options": ["fromage", "souris", "table"],
+    "answer": "fromage"
+  },
+  {
+    "sentence": "Please close the ___ before you leave.",
+    "options": ["porte", "chapeau", "pluie"],
+    "answer": "porte"
+  },
+  {
+    "sentence": "He wore a red ___ on his head.",
+    "options": ["chapeau", "pantalon", "clé"],
+    "answer": "chapeau"
+  },
+  {
+    "sentence": "She opened the door with her ___.",
+    "options": ["clé", "télé", "crayon"],
+    "answer": "clé"
+  },
+  {
+    "sentence": "We danced under the ___.",
+    "options": ["lune", "chaise", "plage"],
+    "answer": "lune"
+  },
+  {
+    "sentence": "They walked along the sunny ___.",
+    "options": ["plage", "stylo", "fenêtre"],
+    "answer": "plage"
+  },
+  {
+    "sentence": "I packed my ___ for the trip.",
+    "options": ["valise", "voiture", "neige"],
+    "answer": "valise"
+  },
+  {
+    "sentence": "Snow covered the ___ in winter.",
+    "options": ["neige", "chat", "souris"],
+    "answer": "neige"
+  },
+  {
+    "sentence": "She drove a blue ___.",
+    "options": ["voiture", "livre", "clé"],
+    "answer": "voiture"
+  },
+  {
+    "sentence": "The ___ ran through the garden.",
+    "options": ["souris", "chaussure", "porte"],
+    "answer": "souris"
+  },
+  {
+    "sentence": "He put on his left ___.",
+    "options": ["chaussure", "chapeau", "fenêtre"],
+    "answer": "chaussure"
+  },
+  {
+    "sentence": "We sat on the ___ by the fire.",
+    "options": ["chaise", "table", "fromage"],
+    "answer": "chaise"
+  },
+  {
+    "sentence": "Books were stacked on the ___.",
+    "options": ["table", "voiture", "pantalon"],
+    "answer": "table"
+  },
+  {
+    "sentence": "She wore her new ___ to the party.",
+    "options": ["robe", "chat", "neige"],
+    "answer": "robe"
+  },
+  {
+    "sentence": "The boy saw a ___ in the tree.",
+    "options": ["oiseau", "fenêtre", "chaussure"],
+    "answer": "oiseau"
+  },
+  {
+    "sentence": "He zipped up his ___.",
+    "options": ["veste", "clé", "fromage"],
+    "answer": "veste"
+  },
+  {
+    "sentence": "The ___ glowed in the sky.",
+    "options": ["étoile", "chaise", "valise"],
+    "answer": "étoile"
+  },
+  {
+    "sentence": "She brushed her ___ before sleeping.",
+    "options": ["cheveux", "chaussure", "chat"],
+    "answer": "cheveux"
+  },
+  {
+    "sentence": "They sat under the ___ for shade.",
+    "options": ["arbre", "stylo", "pantalon"],
+    "answer": "arbre"
+  },
+  {
+    "sentence": "He wore long ___ in the winter.",
+    "options": ["pantalon", "plage", "lune"],
+    "answer": "pantalon"
+  }
+]
