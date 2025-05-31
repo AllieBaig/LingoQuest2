@@ -7,7 +7,8 @@
 */
 
 import { getMixLingoQuestions } from '../utils/questionPool.js';
-import { autoCheckMCQ as autoAttachMCQEvents } from '../utils/mcqAutoCheck.js';
+import { autoAttachMCQEvents as autoCheckMCQ } from '../utils/mcqAutoCheck.js';
+//import { autoCheckMCQ as autoAttachMCQEvents } from '../utils/mcqAutoCheck.js';
 //import { autoCheckMCQ } from '../utils/mcqAutoCheck.js';
 //import { autoCheckMCQ } from '../mcqAutoCheck.js';
 import { addXP } from '../profile/profileManager.js';
