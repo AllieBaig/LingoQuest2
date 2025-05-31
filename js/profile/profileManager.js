@@ -26,6 +26,13 @@ export function getProfile() {
   return JSON.parse(localStorage.getItem('profile'));
 }
 
+export function addXP(amount) {
+  const profile = JSON.parse(localStorage.getItem('profile') || '{}');
+  profile.xp = (profile.xp || 0) + amount;
+  localStorage.setItem('profile', JSON.stringify(profile));
+}
+
+
 function generateNickname() {
   const animals = ['Fox', 'Bear', 'Owl', 'Lion', 'Cat'];
   const colors = ['Red', 'Blue', 'Green', 'Silver', 'Gold'];
