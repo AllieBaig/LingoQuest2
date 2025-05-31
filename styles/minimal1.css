@@ -1,0 +1,31 @@
+
+/* styles/minimal.css - Senior-friendly minimal UI */
+
+body.minimal-ui {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  background-color: #fefefe;
+  color: #222;
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+button {
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  background: #0077cc;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+header, footer {
+  text-align: center;
+  margin: 1rem 0;
+}
