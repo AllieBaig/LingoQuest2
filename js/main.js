@@ -21,7 +21,7 @@ export function showMainMenu() {
   mixLingoBtn.setAttribute('data-i18n', 'start_game');
 
   mixLingoBtn.addEventListener('click', async () => {
-    const { startMixLingo } = await import('./modes/mixlingo.js');
+    const { startMixLingo } = await import('./modes/mixlingo');
     startMixLingo();
   });
 
