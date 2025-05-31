@@ -11,6 +11,7 @@
 
 import { initProfile } from './profile/profileManager.js';
 import { applyTheme } from './ui/themeManager.js';
+import { loadLanguage } from './ui/langManager.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   initProfile();
@@ -18,7 +19,19 @@ window.addEventListener('DOMContentLoaded', async () => {
   const { renderHeader } = await import('./ui/uiHeader.js');
   const { renderFooter } = await import('./ui/uiFooter.js');
   const { showMainMenu } = await import('./main.js');
+const savedLang = localStorage.getItem('ui-lang') || 'en';
+ await loadLanguage(savedLang);
   renderHeader();
   renderFooter();
   showMainMenu();
 });
+
+
+
+
+
+
+
+
+
+
