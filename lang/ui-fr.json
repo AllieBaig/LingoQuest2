@@ -1,8 +1,27 @@
 
+/*
 {
   "start_game": "Commencer le jeu",
   "choose_mode": "Choisir le mode",
   "profile_label": "Profil",
   "settings": "Paramètres",
   "back_to_menu": "Retour au menu"
+}
+*/
+
+
+{
+  "start_game": "Commencer le jeu",
+  "choose_mode": "Choisir le mode",
+  "profile_label": "Profil",
+  "settings": "Paramètres",
+  "back_to_menu": "Retour au menu",
+  "language_label": "Langue",
+  "theme_label": "Thème",
+  "font_label": "Police du jeu",
+  "xp_label": "XP",
+  "nickname_label": "Surnom",
+  "avatar_label": "Avatar",
+  "confirm": "Confirmer",
+  "cancel": "Annuler"
 }
