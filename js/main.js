@@ -27,9 +27,11 @@ export function showMainMenu() {
 
   menu.appendChild(heading);
   menu.appendChild(mixLingoBtn);
+
+  console.log('✅ showMainMenu() called — menu injected');
+  console.log('✅ showMainMenu is executing.');
+  menu.style.border = '2px solid lime'; // visual proof it's alive
+
 }
 
-console.log('✅ showMainMenu() called — menu injected');
-console.log('✅ showMainMenu is executing.');
-menu.style.border = '2px solid lime'; // visual proof it's alive
 
