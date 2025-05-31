@@ -1,0 +1,14 @@
+
+/* Font families for game text */
+body.font-default {
+  font-family: 'Segoe UI', sans-serif;
+}
+body.font-serif {
+  font-family: 'Georgia', serif;
+}
+body.font-handwritten {
+  font-family: 'Comic Sans MS', cursive;
+}
+body.font-monospace {
+  font-family: 'Courier New', monospace;
+}
