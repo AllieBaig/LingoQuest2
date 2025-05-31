@@ -1,0 +1,100 @@
+
+[
+  {
+    "id": "de-001",
+    "sentence": "He put on his left ___",
+    "answers": {
+      "en": ["shoe", "hat", "coat"],
+      "fr": ["chaussure", "chapeau", "manteau"],
+      "de": ["Schuh", "Hut", "Mantel"]
+    },
+    "correct": {
+      "en": "shoe",
+      "fr": "chaussure",
+      "de": "Schuh"
+    }
+  },
+  {
+    "id": "de-002",
+    "sentence": "They built a house with red ___",
+    "answers": {
+      "en": ["bricks", "planks", "nails"],
+      "fr": ["briques", "planches", "clous"],
+      "de": ["Ziegel", "Bretter", "Nägel"]
+    },
+    "correct": {
+      "en": "bricks",
+      "fr": "briques",
+      "de": "Ziegel"
+    }
+  },
+  {
+    "id": "de-003",
+    "sentence": "She wrote a letter using a ___",
+    "answers": {
+      "en": ["pen", "brush", "crayon"],
+      "fr": ["stylo", "pinceau", "crayon"],
+      "de": ["Stift", "Pinsel", "Bleistift"]
+    },
+    "correct": {
+      "en": "pen",
+      "fr": "stylo",
+      "de": "Stift"
+    }
+  },
+  {
+    "id": "de-004",
+    "sentence": "The bird flew over the ___",
+    "answers": {
+      "en": ["mountain", "desert", "sea"],
+      "fr": ["montagne", "désert", "mer"],
+      "de": ["Berg", "Wüste", "Meer"]
+    },
+    "correct": {
+      "en": "mountain",
+      "fr": "montagne",
+      "de": "Berg"
+    }
+  },
+  {
+    "id": "de-005",
+    "sentence": "They lit a ___ in the forest",
+    "answers": {
+      "en": ["fire", "lamp", "candle"],
+      "fr": ["feu", "lampe", "bougie"],
+      "de": ["Feuer", "Lampe", "Kerze"]
+    },
+    "correct": {
+      "en": "fire",
+      "fr": "feu",
+      "de": "Feuer"
+    }
+  },
+  {
+    "id": "de-006",
+    "sentence": "He cut the paper with ___",
+    "answers": {
+      "en": ["scissors", "knife", "blade"],
+      "fr": ["ciseaux", "couteau", "lame"],
+      "de": ["Schere", "Messer", "Klinge"]
+    },
+    "correct": {
+      "en": "scissors",
+      "fr": "ciseaux",
+      "de": "Schere"
+    }
+  },
+  {
+    "id": "de-007",
+    "sentence": "The old man sat on a ___",
+    "answers": {
+      "en": ["bench", "chair", "couch"],
+      "fr": ["banc", "chaise", "canapé"],
+      "de": ["Bank", "Stuhl", "Sofa"]
+    },
+    "correct": {
+      "en": "bench",
+      "fr": "banc",
+      "de": "Bank"
+    }
+  },
