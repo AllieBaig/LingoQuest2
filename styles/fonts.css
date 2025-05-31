@@ -1,0 +1,64 @@
+
+
+/* Font families for game text */
+body.font-default {
+  font-family: 'Segoe UI', sans-serif;
+}
+body.font-serif {
+  font-family: 'Georgia', serif;
+}
+body.font-handwritten {
+  font-family: 'Comic Sans MS', cursive;
+}
+body.font-monospace {
+  font-family: 'Courier New', monospace;
+}
+
+
+body.font-tinos {
+  font-family: 'Tinos', serif;
+}
+
+body.font-crimson {
+  font-family: 'Crimson Text', serif;
+}
+
+body.font-source-serif {
+  font-family: 'Source Serif Pro', serif;
+}
+
+body.font-neuton {
+  font-family: 'Neuton', serif;
+}
+
+body.font-lora {
+  font-family: 'Lora', serif;
+
+
+  /* Sans Forgetica Custom Font */
+@font-face {
+  font-family: 'Sans Forgetica';
+  src: url('../fonts/sans-forgetica.regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+  
+}
+
+
+body.font-tinos { font-family: 'Tinos', serif; }
+body.font-crimson { font-family: 'Crimson Text', serif; }
+body.font-source-serif { font-family: 'Source Serif Pro', serif; }
+body.font-neuton { font-family: 'Neuton', serif; }
+body.font-lora { font-family: 'Lora', serif; }
+body.font-sans-forgetica { font-family: 'Sans Forgetica', serif; }
+
+:root {
+  --game-font-size: 24px;
+}
+#gameArea {
+  font-size: var(--game-font-size);
+}
+
+
