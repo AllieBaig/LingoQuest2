@@ -8,7 +8,7 @@
 5) Timestamp: 2025-05-31 23:40 | File: js/modes/echo-exp.js
 */
 
-import { getEchoExpQuestions } from '../questionPool.js';
+import { getEchoExpQuestions } from '../utils/questionPool.js';
 import { logEvent } from '../tools/eventLogger.js';
 import { renderIngameHead } from '../ui/ingameHead.js';
 import { addXP } from '../profile/profileManager.js';
