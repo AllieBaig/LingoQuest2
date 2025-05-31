@@ -5,6 +5,21 @@
 4) Timestamp: 2025-05-30 21:15 | File: js/app.js
 */
 
+// Global error logging
+window.addEventListener('error', (e) => {
+  import('./tools/errorLog.js').then(({ logError }) => {
+    logError(e.message);
+  });
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  import('./tools/errorLog.js').then(({ logError }) => {
+    logError(`Unhandled Promise: ${e.reason}`);
+  });
+});
+
+
+
 import { initProfile } from './profile/profileManager.js';
 import { loadLanguage } from './ui/langManager.js';
 import { initFont } from './ui/fontManager.js';
