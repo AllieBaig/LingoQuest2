@@ -10,6 +10,9 @@
 
 //import { logEvent } from './tools/eventLogger.js';
 import { loadMode } from './modeLoader.js';
+import { renderSettingsPanel } from './ui/uiSettingsPanel.js';
+
+
 
 export function showMainMenu() {
   const menu = document.getElementById('menuArea');
@@ -42,3 +45,8 @@ export function showMainMenu() {
   menu.appendChild(mixLingoBtn);
   menu.appendChild(echoExpBtn);
 }
+
+renderSettingsPanel();
+
+
+
