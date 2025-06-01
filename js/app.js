@@ -11,7 +11,7 @@
 */
 
 import { initProfile } from './profile/profileManager.js';
-import { applyTheme } from './ui/themeManager.js';
+import { applyTheme } from './themeManager.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   initProfile();
