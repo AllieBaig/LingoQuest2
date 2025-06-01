@@ -16,8 +16,8 @@ import { applyTheme } from './themeManager.js';
 window.addEventListener('DOMContentLoaded', async () => {
   initProfile();
   applyTheme();
-  const { renderHeader } = await import('./ui/uiHeader.js');
-  const { renderFooter } = await import('./ui/uiFooter.js');
+  const { renderHeader } = await import('./uiHeader.js');
+  const { renderFooter } = await import('./uiFooter.js');
   const { showMainMenu } = await import('./main.js');
   renderHeader();
   renderFooter();
