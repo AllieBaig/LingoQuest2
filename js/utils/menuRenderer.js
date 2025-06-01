@@ -23,6 +23,8 @@ export function renderGameMenu() {
         <button class="menu-btn" id="btnEchoExp">📜 Echo Expedition</button>
         <button class="menu-btn" id="btnRelic">🗝️ Word Relic</button>
         <button class="menu-btn" id="btnCineQuest">🎬 CineQuest</button>
+        <button class="menu-btn" id="btnHollyBolly">🎬 HollyBolly</button>
+
       </div>
     </div>
   `;
@@ -51,4 +53,12 @@ export function renderGameMenu() {
     const mod = await loadMode('cinequest');
     mod.start();
   });
+
+ document.getElementById('btnHollyBolly')?.addEventListener('click', async () => {
+    logEvent('menu_click', { mode: 'HollyBolly' });
+    const mod = await loadMode('hollybolly');
+    mod.start();
+  });
+
+  
 }
