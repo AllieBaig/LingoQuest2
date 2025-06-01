@@ -37,7 +37,7 @@ export async function loadMode(modeName, method = 'dynamic') {
 case 'cinequest':
       return method === 'static'
         ? { start: cinequestStatic.startCineQuest }
-        : { start: (await import('./modes/cinequest.js')).startRelic };
+        : { start: (await import('./modes/cinequest.js')).startCineQuest };
 
     
 
