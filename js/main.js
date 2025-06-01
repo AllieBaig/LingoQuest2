@@ -21,6 +21,20 @@ export function showMainMenu() {
   const heading = document.createElement('h2');
   heading.textContent = 'Choose a Game Mode';
 
+
+// 🗺️ Echo Expedition Button
+  const echoExpBtn = document.createElement('button');
+  echoExpBtn.id = 'echoExpBtn';
+  echoExpBtn.textContent = '🗺️ Echo Expedition';
+  echoExpBtn.addEventListener('click', async () => {
+    //logEvent('button_click', { id: 'echoExpBtn', label: 'Echo Expedition' });
+    const mode = await loadMode('echoexp');
+    mode.start();
+  });
+
+
+
+
   // 🌍 MixLingo Button
   const mixLingoBtn = document.createElement('button');
   mixLingoBtn.id = 'mixLingoBtn';
@@ -31,19 +45,30 @@ export function showMainMenu() {
     mode.start();
   });
 
-  // 🗺️ Echo Expedition Button
-  const echoExpBtn = document.createElement('button');
-  echoExpBtn.id = 'echoExpBtn';
-  echoExpBtn.textContent = '🗺️ Echo Expedition';
-  echoExpBtn.addEventListener('click', async () => {
-    //logEvent('button_click', { id: 'echoExpBtn', label: 'Echo Expedition' });
-    const mode = await loadMode('echoexp');
-    mode.start();
-  });
+
+  
+
+
+// Relic button
+const relicBtn = document.createElement('button');
+relicBtn.id = 'relicBtn';
+relicBtn.textContent = '🏺 Relic Mode';
+relicBtn.setAttribute('data-i18n', 'start_relic');
+
+relicBtn.addEventListener('click', async () => {
+  const { startRelic } = await import('./modeLoader.js');
+  startRelic();
+});
+
+
+
 
   menu.appendChild(heading);
-  menu.appendChild(mixLingoBtn);
   menu.appendChild(echoExpBtn);
+  menu.appendChild(mixLingoBtn);
+  menu.appendChild(relicBtn);
+  
+  
 }
 
 renderSettingsPanel();
