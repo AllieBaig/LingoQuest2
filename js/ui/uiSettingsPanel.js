@@ -10,7 +10,7 @@
 */
 
 import { loadLanguage } from './langManager.js';
-//import { applyTheme } from './themeManager.js';
+import { applyTheme } from './themeManager.js';
 import { setTheme, toggleDarkMode } from './themeManager.js';
 
 import { applyFontChoice } from './fontManager.js';
