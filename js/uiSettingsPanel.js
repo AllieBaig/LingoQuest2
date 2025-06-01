@@ -72,10 +72,18 @@ export function renderSettingsPanel(containerId = 'menuArea') {
     applyTranslations();
   });
 
+  /*
   document.getElementById('themeSelect').addEventListener('change', (e) => {
     localStorage.setItem('theme', e.target.value);
     applyTheme();
   });
+  */
+  document.getElementById('themeSelect').addEventListener('change', (e) => {
+  const theme = e.target.value.replace('theme-', '');
+  localStorage.setItem('theme', theme);
+  applyTheme(theme);
+});
+  
 
   document.getElementById('fontSelect').addEventListener('change', (e) => {
     applyFontChoice(e.target.value);
