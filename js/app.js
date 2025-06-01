@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   applyTheme();
   const { renderHeader } = await import('./uiHeader.js');
   const { renderFooter } = await import('./uiFooter.js');
-  const { showMainMenu } = await import('./js/main.js');
+  const { showMainMenu } = await import('./main.js');
   renderHeader();
   renderFooter();
   showMainMenu();
