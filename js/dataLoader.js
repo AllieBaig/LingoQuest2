@@ -83,6 +83,8 @@ export function shuffleArray(array) {
   return shuffled;
 }
 
+
+/*
 export {
   loadJSON,
   loadMultipleJSON,
@@ -91,5 +93,6 @@ export {
   showError
 };
 
+*/
 
 
