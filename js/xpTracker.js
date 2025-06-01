@@ -61,3 +61,7 @@ export function resetXP() {
 export function initXPTracker() {
   updateXPUI();
 }
+
+export { initXPTracker as renderXPBar };
+
+
