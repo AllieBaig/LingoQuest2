@@ -15,7 +15,7 @@ import {
   renderIngameFoot
 } from '../gameUtils.js';
 
-import { loadJSON, shuffleArray, showError } from '../utils/dataLoader.js';
+import { loadJSON, shuffleArray, showError } from '../dataLoader.js';
 
 let relicQuestions = [];
 let currentIndex = 0;
