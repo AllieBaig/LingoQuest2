@@ -8,7 +8,7 @@
 6) Timestamp: 2025-06-01 23:45 | File: js/main.js
 */
 
-import { renderGameMenu } from './utils/menuRenderer.js';
+import { renderGameMenu } from './menuRenderer.js';
 import { loadMode } from './modeLoader.js';
 import { logEvent } from './eventLogger.js';
 import { handleGameLoadError } from './modeHelpers.js';
