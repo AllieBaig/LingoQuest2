@@ -6,8 +6,10 @@
 5) Timestamp: 2025-06-01 07:10 | File: js/ui/themeDropdown.js
 */
 
-import { setTheme } from './themeManager.js';
+//import { setTheme } from './themeManager.js';
 //import { logEvent } from '../tools/eventLogger.js';
+
+import { applyTheme as setTheme } from './themeManager.js';
 import { logEvent } from './tools/eventLogger.js';  // ✅ correct relative path
 
 // ⏰ Holiday map (MM-DD format → theme name)
