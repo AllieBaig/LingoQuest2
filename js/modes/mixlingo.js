@@ -96,6 +96,8 @@ function loadNextQuestion() {
   if (answeredIDs.size >= questionPool.length) {
     return showCompletion();
   }
+  
+  console.log('🧩 answeredIDs:', answeredIDs);
 
   let question;
   let tries = 0;
