@@ -7,7 +7,8 @@
 */
 
 import { setTheme } from './themeManager.js';
-import { logEvent } from '../tools/eventLogger.js';
+//import { logEvent } from '../tools/eventLogger.js';
+import { logEvent } from './tools/eventLogger.js';  // ✅ correct relative path
 
 // ⏰ Holiday map (MM-DD format → theme name)
 const holidayThemes = {
