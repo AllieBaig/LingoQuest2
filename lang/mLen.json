@@ -1,0 +1,518 @@
+
+[
+  {
+    "id": "en-001",
+    "sentence": "She always ___ to school on time.",
+    "answers": {
+      "en": ["walks", "runs", "drives", "flies"]
+    },
+    "correct": {
+      "en": "walks"
+    }
+  },
+  {
+    "id": "en-002",
+    "sentence": "We need to ___ this document before the meeting.",
+    "answers": {
+      "en": ["print", "burn", "fold", "break"]
+    },
+    "correct": {
+      "en": "print"
+    }
+  },
+  {
+    "id": "en-003",
+    "sentence": "They ___ the cake together for her birthday.",
+    "answers": {
+      "en": ["baked", "bought", "threw", "sliced"]
+    },
+    "correct": {
+      "en": "baked"
+    }
+  },
+  {
+    "id": "en-004",
+    "sentence": "He likes to ___ books in his free time.",
+    "answers": {
+      "en": ["read", "eat", "draw", "count"]
+    },
+    "correct": {
+      "en": "read"
+    }
+  },
+  {
+    "id": "en-005",
+    "sentence": "The cat ___ under the sofa when it rains.",
+    "answers": {
+      "en": ["hides", "jumps", "plays", "sings"]
+    },
+    "correct": {
+      "en": "hides"
+    }
+  },
+  {
+    "id": "en-006",
+    "sentence": "We ___ dinner at 7 PM every day.",
+    "answers": {
+      "en": ["eat", "watch", "paint", "catch"]
+    },
+    "correct": {
+      "en": "eat"
+    }
+  },
+  {
+    "id": "en-007",
+    "sentence": "I usually ___ coffee in the morning.",
+    "answers": {
+      "en": ["drink", "cook", "drive", "wear"]
+    },
+    "correct": {
+      "en": "drink"
+    }
+  },
+  {
+    "id": "en-008",
+    "sentence": "The baby can ___ a few words now.",
+    "answers": {
+      "en": ["say", "run", "sleep", "write"]
+    },
+    "correct": {
+      "en": "say"
+    }
+  },
+  {
+    "id": "en-009",
+    "sentence": "Don’t forget to ___ your homework!",
+    "answers": {
+      "en": ["do", "buy", "cut", "wash"]
+    },
+    "correct": {
+      "en": "do"
+    }
+  },
+  {
+    "id": "en-010",
+    "sentence": "She ___ the window to let in fresh air.",
+    "answers": {
+      "en": ["opened", "closed", "painted", "broke"]
+    },
+    "correct": {
+      "en": "opened"
+    }
+  }
+
+
+  
+ 
+  {
+    "id": "en-011",
+    "sentence": "They ___ the bus at the central station.",
+    "answers": {
+      "en": ["boarded", "missed", "painted", "built"]
+    },
+    "correct": {
+      "en": "boarded"
+    }
+  },
+  {
+    "id": "en-012",
+    "sentence": "Please ___ the lights when you leave.",
+    "answers": {
+      "en": ["turn off", "turn up", "pull", "paint"]
+    },
+    "correct": {
+      "en": "turn off"
+    }
+  },
+  {
+    "id": "en-013",
+    "sentence": "He ___ his keys on the kitchen table.",
+    "answers": {
+      "en": ["found", "lost", "wrote", "flew"]
+    },
+    "correct": {
+      "en": "found"
+    }
+  },
+  {
+    "id": "en-014",
+    "sentence": "The teacher ___ a difficult question.",
+    "answers": {
+      "en": ["asked", "played", "cooked", "sang"]
+    },
+    "correct": {
+      "en": "asked"
+    }
+  },
+  {
+    "id": "en-015",
+    "sentence": "She ___ the guitar beautifully.",
+    "answers": {
+      "en": ["plays", "throws", "catches", "reads"]
+    },
+    "correct": {
+      "en": "plays"
+    }
+  },
+  {
+    "id": "en-016",
+    "sentence": "Let’s ___ a picnic this weekend.",
+    "answers": {
+      "en": ["have", "drive", "write", "clean"]
+    },
+    "correct": {
+      "en": "have"
+    }
+  },
+  {
+    "id": "en-017",
+    "sentence": "He ___ to the gym every morning.",
+    "answers": {
+      "en": ["goes", "runs", "jumps", "sleeps"]
+    },
+    "correct": {
+      "en": "goes"
+    }
+  },
+  {
+    "id": "en-018",
+    "sentence": "We should ___ the plants before vacation.",
+    "answers": {
+      "en": ["water", "hide", "break", "sing"]
+    },
+    "correct": {
+      "en": "water"
+    }
+  },
+  {
+    "id": "en-019",
+    "sentence": "The kids ___ snowmen in the yard.",
+    "answers": {
+      "en": ["built", "ate", "found", "read"]
+    },
+    "correct": {
+      "en": "built"
+    }
+  },
+  {
+    "id": "en-020",
+    "sentence": "He ___ the doorbell twice.",
+    "answers": {
+      "en": ["rang", "threw", "drew", "saw"]
+    },
+    "correct": {
+      "en": "rang"
+    }
+  }
+
+
+  
+  {
+    "id": "en-021",
+    "sentence": "She ___ a scarf around her neck.",
+    "answers": {
+      "en": ["wrapped", "dropped", "painted", "hid"]
+    },
+    "correct": {
+      "en": "wrapped"
+    }
+  },
+  {
+    "id": "en-022",
+    "sentence": "He ___ the ladder carefully.",
+    "answers": {
+      "en": ["climbed", "opened", "called", "cut"]
+    },
+    "correct": {
+      "en": "climbed"
+    }
+  },
+  {
+    "id": "en-023",
+    "sentence": "The children ___ quietly during story time.",
+    "answers": {
+      "en": ["listened", "screamed", "jumped", "ran"]
+    },
+    "correct": {
+      "en": "listened"
+    }
+  },
+  {
+    "id": "en-024",
+    "sentence": "They ___ the puzzle in record time.",
+    "answers": {
+      "en": ["solved", "burned", "watched", "drew"]
+    },
+    "correct": {
+      "en": "solved"
+    }
+  },
+  {
+    "id": "en-025",
+    "sentence": "The dog ___ at the stranger.",
+    "answers": {
+      "en": ["barked", "sang", "danced", "drove"]
+    },
+    "correct": {
+      "en": "barked"
+    }
+  },
+  {
+    "id": "en-026",
+    "sentence": "I ___ a delicious cake for the party.",
+    "answers": {
+      "en": ["baked", "drove", "fixed", "flew"]
+    },
+    "correct": {
+      "en": "baked"
+    }
+  },
+  {
+    "id": "en-027",
+    "sentence": "They ___ across the river in a canoe.",
+    "answers": {
+      "en": ["paddled", "walked", "flew", "threw"]
+    },
+    "correct": {
+      "en": "paddled"
+    }
+  },
+  {
+    "id": "en-028",
+    "sentence": "She ___ her favorite book again.",
+    "answers": {
+      "en": ["read", "threw", "cut", "ate"]
+    },
+    "correct": {
+      "en": "read"
+    }
+  },
+  {
+    "id": "en-029",
+    "sentence": "We ___ the tent before sunset.",
+    "answers": {
+      "en": ["pitched", "cleaned", "ate", "folded"]
+    },
+    "correct": {
+      "en": "pitched"
+    }
+  },
+  {
+    "id": "en-030",
+    "sentence": "He ___ the note on the fridge.",
+    "answers": {
+      "en": ["left", "pushed", "ran", "sang"]
+    },
+    "correct": {
+      "en": "left"
+    }
+  }
+
+
+  
+  {
+    "id": "en-031",
+    "sentence": "She ___ the flower gently.",
+    "answers": {
+      "en": ["touched", "broke", "screamed", "ran"]
+    },
+    "correct": {
+      "en": "touched"
+    }
+  },
+  {
+    "id": "en-032",
+    "sentence": "They ___ the movie last night.",
+    "answers": {
+      "en": ["watched", "cooked", "painted", "played"]
+    },
+    "correct": {
+      "en": "watched"
+    }
+  },
+  {
+    "id": "en-033",
+    "sentence": "He ___ the door without a sound.",
+    "answers": {
+      "en": ["closed", "danced", "wrote", "built"]
+    },
+    "correct": {
+      "en": "closed"
+    }
+  },
+  {
+    "id": "en-034",
+    "sentence": "We ___ the map to find the trail.",
+    "answers": {
+      "en": ["read", "ate", "folded", "sang"]
+    },
+    "correct": {
+      "en": "read"
+    }
+  },
+  {
+    "id": "en-035",
+    "sentence": "The baby ___ during the thunderstorm.",
+    "answers": {
+      "en": ["cried", "laughed", "danced", "slept"]
+    },
+    "correct": {
+      "en": "cried"
+    }
+  },
+  {
+    "id": "en-036",
+    "sentence": "I ___ my bike to school today.",
+    "answers": {
+      "en": ["rode", "drew", "threw", "fixed"]
+    },
+    "correct": {
+      "en": "rode"
+    }
+  },
+  {
+    "id": "en-037",
+    "sentence": "She ___ the email immediately.",
+    "answers": {
+      "en": ["replied", "sang", "cut", "read"]
+    },
+    "correct": {
+      "en": "replied"
+    }
+  },
+  {
+    "id": "en-038",
+    "sentence": "They ___ the soup slowly.",
+    "answers": {
+      "en": ["stirred", "played", "ran", "watched"]
+    },
+    "correct": {
+      "en": "stirred"
+    }
+  },
+  {
+    "id": "en-039",
+    "sentence": "He ___ the guitar softly.",
+    "answers": {
+      "en": ["played", "drew", "folded", "fixed"]
+    },
+    "correct": {
+      "en": "played"
+    }
+  },
+  {
+    "id": "en-040",
+    "sentence": "We ___ for hours under the stars.",
+    "answers": {
+      "en": ["talked", "ran", "washed", "jumped"]
+    },
+    "correct": {
+      "en": "talked"
+    }
+  }
+
+  
+  {
+    "id": "en-041",
+    "sentence": "He ___ the stairs two at a time.",
+    "answers": {
+      "en": ["climbed", "drew", "painted", "threw"]
+    },
+    "correct": {
+      "en": "climbed"
+    }
+  },
+  {
+    "id": "en-042",
+    "sentence": "She ___ the answer quickly.",
+    "answers": {
+      "en": ["guessed", "sang", "jumped", "folded"]
+    },
+    "correct": {
+      "en": "guessed"
+    }
+  },
+  {
+    "id": "en-043",
+    "sentence": "They ___ the puzzle together.",
+    "answers": {
+      "en": ["solved", "baked", "ran", "painted"]
+    },
+    "correct": {
+      "en": "solved"
+    }
+  },
+  {
+    "id": "en-044",
+    "sentence": "I ___ my glasses on the table.",
+    "answers": {
+      "en": ["left", "wrote", "broke", "swept"]
+    },
+    "correct": {
+      "en": "left"
+    }
+  },
+  {
+    "id": "en-045",
+    "sentence": "The wind ___ through the trees.",
+    "answers": {
+      "en": ["blew", "ran", "sang", "shook"]
+    },
+    "correct": {
+      "en": "blew"
+    }
+  },
+  {
+    "id": "en-046",
+    "sentence": "We ___ the candles before bed.",
+    "answers": {
+      "en": ["lit", "closed", "painted", "threw"]
+    },
+    "correct": {
+      "en": "lit"
+    }
+  },
+  {
+    "id": "en-047",
+    "sentence": "She ___ a letter to her friend.",
+    "answers": {
+      "en": ["wrote", "bought", "cleaned", "cooked"]
+    },
+    "correct": {
+      "en": "wrote"
+    }
+  },
+  {
+    "id": "en-048",
+    "sentence": "They ___ at the joke.",
+    "answers": {
+      "en": ["laughed", "ran", "built", "slept"]
+    },
+    "correct": {
+      "en": "laughed"
+    }
+  },
+  {
+    "id": "en-049",
+    "sentence": "He ___ a picture of his dog.",
+    "answers": {
+      "en": ["drew", "cut", "climbed", "washed"]
+    },
+    "correct": {
+      "en": "drew"
+    }
+  },
+  {
+    "id": "en-050",
+    "sentence": "I ___ my hands before dinner.",
+    "answers": {
+      "en": ["washed", "wrote", "played", "threw"]
+    },
+    "correct": {
+      "en": "washed"
+    }
+  }
+]
+
+  
+  
