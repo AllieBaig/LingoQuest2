@@ -61,3 +61,7 @@ export function showError(message) {
     `;
   }
 }
+
+// Export both specific and generic start functions for compatibility
+export { startRelic, startRelic as start };
+
