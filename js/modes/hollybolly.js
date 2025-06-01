@@ -1,104 +1,165 @@
+/* 
+1) Purpose: HollyBolly game mode — decode Bollywood remakes of Hollywood films
+2) Features: Clue-based MCQs, XP rewards, tiered rewards (box office, actor worth, director worth)
+3) Dependencies: modeHelpers.js, gameUtils.js
+4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
+5) Timestamp: 2025-06-01 23:45 | File: js/modes/hollybolly.js
+*/
 
-/*
+import {
+  logEvent,
+  addXP,
+  autoCheckMCQ,
+  renderIngameHead,
+  renderIngameFoot,
+  showUserError,
+  verifyQuestionStructure,
+  safeLoadQuestions,
+  shuffleArray,
+  optionCount
+} from '../modeHelpers.js';
 
-1. Purpose: HollyBolly mode — match iconic Place, Animal, Thing to film title
+let questionPool = [];
+let answeredIDs = new Set();
+let currentQuestion = null;
+let difficulty = localStorage.getItem('game-difficulty') || 'medium';
+let streak = 0;
 
+export async function startHollyBolly() {
+  const gameArea = document.getElementById('gameArea');
+  if (!gameArea) return showUserError('Game area missing.');
 
-2. Features: MCQ-based with difficulty-aware options, shows Bollywood/Hollywood earnings
+  gameArea.innerHTML = '';
+  gameArea.hidden = false;
+  document.getElementById('menuArea').hidden = true;
 
+  renderIngameHead(gameArea);
+  renderIngameFoot(gameArea);
 
-3. Dependencies: modeHelpers.js, gameUtils.js
+  const questions = await safeLoadQuestions('lang/hollybolly-en.json');
+  questionPool = shuffleArray(questions);
+  answeredIDs.clear();
+  streak = 0;
 
+  createSentenceBuilderArea(gameArea);
+  loadNextQuestion();
+}
 
-4. MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
+function createSentenceBuilderArea(gameArea) {
+  let builder = document.getElementById('sentenceBuilderArea');
+  if (!builder) {
+    builder = document.createElement('div');
+    builder.id = 'sentenceBuilderArea';
+    builder.className = 'sentence-builder-container';
+    gameArea.appendChild(builder);
+  }
+}
 
+function loadNextQuestion() {
+  if (answeredIDs.size >= questionPool.length) return showCompletion();
 
-5. Timestamp: 2025-06-01 23:45 | File: js/modes/hollybolly.js */
+  let question;
+  let tries = 0;
+  const maxTries = 50;
 
+  do {
+    question = questionPool[Math.floor(Math.random() * questionPool.length)];
+    tries++;
+  } while (answeredIDs.has(question.id) && tries < maxTries);
 
+  if (!verifyQuestionStructure(question, ['id', 'place', 'animal', 'thing', 'movie'])) {
+    answeredIDs.add(question.id);
+    return loadNextQuestion();
+  }
 
-import { logEvent, addXP, autoCheckMCQ, renderIngameHead, renderIngameFoot, showUserError, verifyQuestionStructure, safeLoadQuestions, shuffleArray, optionCount } from '../modeHelpers.js';
+  currentQuestion = question;
+  renderQuestion(question);
+}
 
-let questionPool = []; let answeredIDs = new Set(); let currentQuestion = null; let difficulty = localStorage.getItem('game-difficulty') || 'medium';
+function renderQuestion(q) {
+  const builder = document.getElementById('sentenceBuilderArea');
+  if (!builder) return showUserError('Missing sentence container.');
 
-export async function startHollyBolly() { const gameArea = document.getElementById('gameArea'); if (!gameArea) return showUserError('Game area missing.');
+  builder.innerHTML = `
+    <div class="clue-box">
+      <p>🏞️ <strong>Place:</strong> ${q.place}</p>
+      <p>🐾 <strong>Animal:</strong> ${q.animal}</p>
+      <p>🎁 <strong>Thing:</strong> ${q.thing}</p>
+    </div>
+    <div class="mcq-options-container" id="mcqOptions"></div>
+  `;
 
-gameArea.innerHTML = ''; gameArea.hidden = false; document.getElementById('menuArea').hidden = true;
+  const options = shuffleArray([q.movie, q.bollywood, '3 Idiots', 'Dhoom 3', 'PK', 'Pathaan']);
+  const shown = shuffleArray(options).slice(0, optionCount[difficulty]);
+  if (!shown.includes(q.movie)) shown[0] = q.movie;
 
-renderIngameHead(gameArea); renderIngameFoot(gameArea);
+  const final = shuffleArray(shown);
+  const container = document.getElementById('mcqOptions');
 
-const rawQuestions = await safeLoadQuestions('lang/hollybolly-en.json'); questionPool = shuffleArray(rawQuestions); answeredIDs.clear();
+  final.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'mcq-btn';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => handleAnswer(opt, q.movie, q));
+    container.appendChild(btn);
+  });
+}
 
-logEvent('game_start', { mode: 'HollyBolly', difficulty, totalQuestions: questionPool.length });
+function handleAnswer(selected, correct, question) {
+  const isCorrect = selected === correct;
+  const buttons = document.querySelectorAll('.mcq-btn');
 
-createSentenceBuilderArea(gameArea); loadNextQuestion(); }
+  buttons.forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === correct) btn.classList.add('correct');
+    if (btn.textContent === selected && !isCorrect) btn.classList.add('wrong');
+  });
 
-function createSentenceBuilderArea(gameArea) { let builder = document.getElementById('sentenceBuilderArea'); if (!builder) { builder = document.createElement('div'); builder.id = 'sentenceBuilderArea'; builder.className = 'sentence-builder-container'; gameArea.appendChild(builder); } }
+  if (isCorrect) {
+    streak++;
+    addXP(getXP());
+    logEvent('answer_correct', { mode: 'HollyBolly', id: question.id, selected, streak });
+    showReward(question, streak);
+  } else {
+    streak = 0;
+    logEvent('answer_wrong', { mode: 'HollyBolly', id: question.id, selected, correct });
+  }
 
-function loadNextQuestion() { if (answeredIDs.size >= questionPool.length) { return showCompletion(); }
+  answeredIDs.add(question.id);
+  setTimeout(loadNextQuestion, 1600);
+}
 
-let tries = 0; let question; do { question = questionPool[Math.floor(Math.random() * questionPool.length)]; tries++; if (tries > 40) return showCompletion(); } while (answeredIDs.has(question.id));
+function showReward(q, streak) {
+  const reward = q.rewards;
+  const builder = document.getElementById('sentenceBuilderArea');
+  if (!reward || !builder) return;
 
-const required = ['id', 'movie', 'clues', 'answers', 'earnings']; if (!verifyQuestionStructure(question, required)) { answeredIDs.add(question.id); return loadNextQuestion(); }
+  const box = document.createElement('div');
+  box.className = 'reward-box';
 
-currentQuestion = question; renderQuestion(question); }
+  if (streak >= 1 && reward.boxOffice) {
+    box.innerHTML += `<p>💰 Box Office:<br>🎬 Hollywood: ${reward.boxOffice.hollywood}<br>🎞️ Bollywood: ${reward.boxOffice.bollywood}</p>`;
+  }
+  if (streak >= 2 && reward.actorWorth) {
+    box.innerHTML += `<p>👤 Actor Worth:<br>Hollywood: ${reward.actorWorth.hollywood}<br>Bollywood: ${reward.actorWorth.bollywood}</p>`;
+  }
+  if (streak >= 3 && reward.directorWorth) {
+    box.innerHTML += `<p>🎬 Director Worth:<br>Hollywood: ${reward.directorWorth.hollywood}<br>Bollywood: ${reward.directorWorth.bollywood}</p>`;
+  }
 
-function renderQuestion(q) { const builder = document.getElementById('sentenceBuilderArea'); if (!builder) return showUserError('Missing sentence area'); builder.innerHTML = '';
+  builder.appendChild(box);
+}
 
-const container = document.createElement('div'); container.className = 'quiz-card';
+function showCompletion() {
+  const builder = document.getElementById('sentenceBuilderArea');
+  if (!builder) return;
 
-const heading = document.createElement('h2'); heading.textContent = 🎥 Guess the Movie!; container.appendChild(heading);
-
-const clues = ['place', 'animal', 'thing'];
-
-clues.forEach((cat) => { const clue = q.clues[cat]; const correct = q.answers[cat]; const pool = shuffleArray([correct, ...(q.choices?.[cat] || [])]); const shown = pool.slice(0, optionCount[difficulty]);
-
-const section = document.createElement('section');
-section.className = 'mcq-section';
-
-const clueText = document.createElement('p');
-clueText.textContent = `${getEmoji(cat)} ${clue}`;
-section.appendChild(clueText);
-
-const group = document.createElement('div');
-group.className = 'btn-group';
-
-shown.forEach(opt => {
-  const btn = document.createElement('button');
-  btn.textContent = opt;
-  btn.className = 'mcq-btn';
-  btn.addEventListener('click', () => handleAnswer(opt, correct, q.id, cat));
-  group.appendChild(btn);
-});
-
-section.appendChild(group);
-container.appendChild(section);
-
-});
-
-builder.appendChild(container); }
-
-function handleAnswer(selected, correct, id, cat) { const key = ${id}-${cat}; if (answeredIDs.has(key)) return;
-
-const isCorrect = autoCheckMCQ(selected, correct); if (isCorrect) addXP(5);
-
-logEvent(isCorrect ? 'answer_correct' : 'answer_wrong', { mode: 'HollyBolly', id, cat, selected, correct });
-
-answeredIDs.add(key);
-
-const catCount = ['place', 'animal', 'thing'].filter(c => answeredIDs.has(${id}-${c})).length; if (catCount === 3) { answeredIDs.add(id); setTimeout(() => showRewardBox(id), 600); } }
-
-function showRewardBox(id) { const q = questionPool.find(x => x.id === id); if (!q) return loadNextQuestion();
-
-const builder = document.getElementById('sentenceBuilderArea'); builder.innerHTML = <div class="reward-box"> <h2>🎬 Answer: ${q.movie}</h2> <p>💰 Bollywood Box Office: ₹${q.earnings.bollywood}</p> <p>💸 Hollywood Original: $${q.earnings.hollywood}</p> <button class="action-btn" onclick="window.startHollyBolly()">▶️ Next</button> </div>; }
-
-function showCompletion() { const builder = document.getElementById('sentenceBuilderArea'); builder.innerHTML = <h2>🏁 HollyBolly Complete!</h2> <p>You completed ${answeredIDs.size} puzzles!</p> <button class="action-btn" onclick="window.startHollyBolly()">🔁 Play Again</button> <button class="action-btn" onclick="resetToMenu()">🏠 Main Menu</button>;
-
-logEvent('game_complete', { mode: 'HollyBolly', total: answeredIDs.size }); }
-
-function getEmoji(cat) { return cat === 'place' ? '🏞️' : cat === 'animal' ? '🐾' : '🎁'; }
-
-function resetToMenu() { document.getElementById('menuArea').hidden = false; document.getElementById('gameArea').hidden = true; answeredIDs.clear(); questionPool = []; currentQuestion = null; }
-
-// Global for reward box button window.startHollyBolly = startHollyBolly;
-
+  builder.innerHTML = `
+    <div class="completion-screen">
+      <h2>🌟 HollyBolly Complete!</h2>
+      <p>Total Questions: ${answeredIDs.size}</p>
+      <p>Difficulty: ${difficulty}</p>
+      <button class="action-btn" onclick="location.reload()">🔄 Play Again</button>
+    </div>
+  `;
+}
