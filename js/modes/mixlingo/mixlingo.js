@@ -7,7 +7,7 @@
 5) Timestamp: 2025-06-02 00:15 | File: js/modes/mixlingo/mixlingo.js
 */
 
-import { questionPool, answeredIDs, currentAnswerLang, difficulty } from './state.js';
+import { questionPool, answeredIDs, currentAnswerLang, difficulty } from './loader.js';
 import { safeLoadQuestions, shuffleArray } from '../../modeHelpers.js';
 import { createSentenceBuilderArea } from './renderer.js';
 import { loadNextQuestion } from './logic.js';
