@@ -80,10 +80,6 @@ export async function startMixLingo() {
 
   createSentenceBuilderArea(gameArea);
   loadNextQuestion();
-  if (!question?.id) {
-  console.warn('❌ Skipping question with missing id:', question);
-  return loadNextQuestion(); // Skip broken entries
-}
   
 }
 
@@ -115,6 +111,13 @@ function loadNextQuestion() {
     tries++;
     if (tries > maxTries) return showCompletion();
   } while (answeredIDs.has(question.id));
+
+
+if (!question?.id) {
+  console.warn('❌ Skipping question with missing id:', question);
+  return loadNextQuestion(); // Skip broken entries
+}
+  
 
   const required = ['id', 'sentence', 'answers', 'correct'];
   if (!verifyQuestionStructure(question, required)) {
