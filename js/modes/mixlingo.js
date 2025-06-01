@@ -52,6 +52,9 @@ document.addEventListener('answerLangChanged', (e) => {
   }
 });
 
+console.log('Loaded questions:', questionPool);
+console.log('🧪 Valid pool length:', questionPool.length);
+
 export async function startMixLingo() {
   const gameArea = document.getElementById('gameArea');
   if (!gameArea) return showUserError('Game area missing.');
