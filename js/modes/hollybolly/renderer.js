@@ -1,53 +1,45 @@
-
 /*
 
-Purpose: Render question UI for HollyBolly game mode
+Purpose: Handles all UI rendering for HollyBolly game mode
 
-Features: Displays Place, Animal, Thing clues + MCQ options
+Features: Renders clues (Place, Animal, Thing), question box, and rewards
 
-Depends on: modeHelpers.js (shuffle, error), gameUtils.js (autoCheckMCQ)
+Depends on: logic.js for currentQuestion and reward handling
 
 MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
 
-Timestamp: 2025-06-01 23:55 | File: js/modes/hollybolly/renderer.js */
+Timestamp: 2025-06-01 23:50 | File: js/modes/hollybolly/renderer.js */
 
 
-import { optionCount, showUserError, shuffleArray } from '../../modeHelpers.js'; import { autoCheckMCQ } from '../../gameUtils.js';
+import { currentQuestion, correctStreak, handleAnswer } from './logic.js'; import { optionCount, showUserError, shuffleArray } from '../../modeHelpers.js';
 
-export function renderQuestionView(question, difficulty, onAnswer) { const builder = document.getElementById('sentenceBuilderArea'); if (!builder) return showUserError('Missing game area.'); builder.innerHTML = '';
+const difficulty = localStorage.getItem('game-difficulty') || 'medium'; const maxOptions = optionCount[difficulty];
 
-// Heading const heading = document.createElement('h2'); heading.textContent = '🎥 Guess the Movie!'; builder.appendChild(heading);
+export function renderHollyBollyQuestion(container) { if (!currentQuestion) return showUserError('No current question.');
 
-// Clue list const list = document.createElement('ul'); list.className = 'hollybolly-clues';
+container.innerHTML = '';
 
-const clues = [ { label: '🏞️ Place', text: question.place }, { label: '🐾 Animal', text: question.animal }, { label: '🎁 Thing', text: question.thing } ];
+const heading = document.createElement('h2'); heading.textContent = '🎥 Guess the Movie!'; container.appendChild(heading);
 
-clues.forEach(({ label, text }) => { const item = document.createElement('li'); item.textContent = ${label}: ${text}; list.appendChild(item); }); builder.appendChild(list);
+const clues = document.createElement('div'); clues.className = 'clue-box'; clues.innerHTML = <p>🏞️ <strong>Place:</strong> ${currentQuestion.place}</p> <p>🐾 <strong>Animal:</strong> ${currentQuestion.animal}</p> <p>🎁 <strong>Thing:</strong> ${currentQuestion.thing}</p>; container.appendChild(clues);
 
-// MCQ buttons const mcqContainer = document.createElement('div'); mcqContainer.className = 'mcq-options-container'; builder.appendChild(mcqContainer);
+const options = [currentQuestion.movie, currentQuestion.bollywood]; const shown = shuffleArray(options).slice(0, maxOptions);
 
-const allOptions = [question.movie, ...question.distractors]; const max = optionCount[difficulty] || 3; const selected = shuffleArray(allOptions).slice(0, max);
+const mcqContainer = document.createElement('div'); mcqContainer.className = 'mcq-options-container';
 
-if (!selected.includes(question.movie)) selected[0] = question.movie;
+shown.forEach(option => { const btn = document.createElement('button'); btn.textContent = option; btn.className = 'mcq-btn'; btn.addEventListener('click', () => handleAnswer(option)); mcqContainer.appendChild(btn); });
 
-const final = shuffleArray(selected);
+container.appendChild(mcqContainer); }
 
-final.forEach(opt => { const btn = document.createElement('button'); btn.className = 'mcq-btn'; btn.textContent = opt; btn.setAttribute('aria-label', opt);
+export function renderReward(container, rewards) { if (!container || !rewards) return;
 
-btn.addEventListener('click', () => {
-  const isCorrect = opt === question.movie;
-  autoCheckMCQ(btn, isCorrect);
-  onAnswer(isCorrect, question);
-});
+const rewardBox = document.createElement('div'); rewardBox.className = 'reward-box';
 
-btn.addEventListener('keydown', e => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    btn.click();
-  }
-});
+if (correctStreak >= 1 && rewards.boxOffice) { rewardBox.innerHTML += <p>💰 <strong>Box Office:</strong><br> Hollywood: ${rewards.boxOffice.hollywood}<br> Bollywood: ${rewards.boxOffice.bollywood}</p>; }
 
-mcqContainer.appendChild(btn);
+if (correctStreak >= 2 && rewards.actorWorth) { rewardBox.innerHTML += <p>🎭 <strong>Main Actor Net Worth:</strong><br> Hollywood: ${rewards.actorWorth.hollywood}<br> Bollywood: ${rewards.actorWorth.bollywood}</p>; }
 
-}); }
+if (correctStreak >= 3 && rewards.directorWorth) { rewardBox.innerHTML += <p>🎬 <strong>Director Net Worth:</strong><br> Hollywood: ${rewards.directorWorth.hollywood}<br> Bollywood: ${rewards.directorWorth.bollywood}</p>; }
+
+container.appendChild(rewardBox); }
 
