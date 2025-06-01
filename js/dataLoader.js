@@ -9,6 +9,8 @@
 
 const cache = {};
 
+/*
+
 export async function loadJSON(path) {
   if (cache[path]) return cache[path];
 
@@ -19,6 +21,24 @@ export async function loadJSON(path) {
     return json;
   } catch (err) {
     console.warn(`⚠️ Could not load ${path}`, err);
+    return [];
+  }
+}
+*/
+export async function loadJSON(path) {
+  if (cache[path]) return cache[path];
+  try {
+    const res = await fetch(path);
+    const json = await res.json();
+    cache[path] = json;
+    return json;
+  } catch (err) {
+    // Extract caller info from stack trace
+    const stackLines = new Error().stack.split('\n');
+    const callerLine = stackLines[2] || 'Unknown';
+    const callerHint = callerLine.trim().replace(/^at\s+/, '');
+
+    console.warn(`⚠️ Could not load ${path} — called from ${callerHint}`, err);
     return [];
   }
 }
@@ -39,3 +59,4 @@ export function clearDataCache(path = null) {
     Object.keys(cache).forEach(k => delete cache[k]);
   }
 }
+
