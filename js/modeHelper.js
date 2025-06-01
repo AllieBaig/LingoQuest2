@@ -108,7 +108,7 @@ function disableButtonDuring(btn, asyncFn) {
  * ✅ Friendly error handler for mode-specific loading
  */
 
-/*
+
 function handleGameLoadError(mode, e, lang = 'en') {
   const knownLangs = ['en', 'fr', 'de'];
   const msg = knownLangs.includes(lang)
@@ -118,22 +118,8 @@ function handleGameLoadError(mode, e, lang = 'en') {
   logEvent('error', { mode, lang, message: e.message });
   showUserError(`❌ ${msg}<br><small>${e.message}</small>`);
 }
-*/
 
 
-export function handleGameLoadError(modeName = 'Game') {
-  const gameArea = document.getElementById('gameArea');
-  if (gameArea) {
-    gameArea.innerHTML = `
-      <div class="error-message" style="padding: 20px; text-align: center;">
-        <h2>❌ ${modeName} Failed to Load</h2>
-        <p>Something went wrong loading this mode. Please try again later or contact support.</p>
-        <button onclick="location.reload()" style="padding: 10px 16px;">🔁 Reload Page</button>
-      </div>
-    `;
-    gameArea.hidden = false;
-    document.getElementById('menuArea').hidden = true;
-  } else {
-    console.error(`[ERROR] ${modeName} failed and #gameArea not found.`);
-  }
+
+
 }
