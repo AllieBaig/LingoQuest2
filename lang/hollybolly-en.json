@@ -106,8 +106,9 @@
     "boxOffice": {
       "hollywood": "$1.05B",
       "bollywood": "$7M"
-    }
+  
   },
+  
   {
     "id": "hb-010",
     "place": "Airport",
@@ -120,9 +121,9 @@
       "bollywood": "$12M"
     }
   }
-]
 
-[
+
+
   {
     "id": "hb-011",
     "place": "Casino",
