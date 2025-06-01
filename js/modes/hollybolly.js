@@ -5,7 +5,7 @@
 4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
 5) Timestamp: 2025-06-01 23:45 | File: js/modes/hollybolly.js
 */
-
+/*
 import {
   logEvent,
   addXP,
@@ -18,6 +18,24 @@ import {
   shuffleArray,
   optionCount
 } from '../modeHelpers.js';
+
+*/
+
+import {
+  showUserError,
+  verifyQuestionStructure,
+  safeLoadQuestions,
+  shuffleArray,
+  optionCount
+} from '../modeHelpers.js';
+
+import {
+  logEvent,
+  addXP,
+  autoCheckMCQ,
+  renderIngameHead,
+  renderIngameFoot
+} from '../gameUtils.js';
 
 let questionPool = [];
 let answeredIDs = new Set();
