@@ -29,3 +29,17 @@ header, footer {
   text-align: center;
   margin: 1rem 0;
 }
+
+
+.theme-picker {
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+.theme-picker select {
+  padding: 0.3em;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+
