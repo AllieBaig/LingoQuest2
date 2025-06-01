@@ -9,13 +9,19 @@
 5) Timestamp: 2025-06-01 22:00 | File: js/modeLoader.js
 */
 
-import * as mixlingoStatic from './modes/mixlingo.js';
+//import * as mixlingoStatic from './modes/mixlingo.js';
 import * as echoExpStatic from './modes/echo-exp.js';
 import * as relicStatic from './modes/relic.js';
 import * as cinequestStatic from './modes/cinequest.js';
-import * as hollybollyStatic from './modes/hollybolly.js';
-
+//import * as hollybollyStatic from './modes/hollybolly.js';
 import { handleGameLoadError } from './modeHelpers.js';
+
+
+import * as mixlingoStatic from './mixlingo/mixlingo.js';
+import * as hollybollyStatic from './hollybolly/hollybolly.js';
+//import * as echoExpStatic from './echo-exp/echo-exp.js';
+//import * as relicStatic from './relic/relic.js';
+//import * as cinequestStatic from './cinequest/cinequest.js';
 
 export async function loadMode(modeName, method = 'dynamic') {
   switch (modeName) {
@@ -24,7 +30,7 @@ export async function loadMode(modeName, method = 'dynamic') {
         ? { start: mixlingoStatic.startMixLingo }
         : await (async () => {
             try {
-              return { start: (await import('./modes/mixlingo.js')).startMixLingo };
+              return { start: (await import('./mixlingo/mixlingo.js')).startMixLingo };
             } catch (err) {
               handleGameLoadError('MixLingo');
               return { start: () => {} };
@@ -72,7 +78,7 @@ export async function loadMode(modeName, method = 'dynamic') {
         ? { start: hollybollyStatic.startHollyBolly }
         : await (async () => {
             try {
-              return { start: (await import('./modes/hollybolly.js')).startHollyBolly };
+              return { start: (await import('./hollybolly/hollybolly.js')).startHollyBolly };
             } catch (err) {
               handleGameLoadError('HollyBolly');
               return { start: () => {} };
