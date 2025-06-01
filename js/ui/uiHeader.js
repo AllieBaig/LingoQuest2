@@ -7,6 +7,9 @@
 */
 
 import { getProfile } from '../profile/profileManager.js';
+import { renderThemeDropdown } from './themeDropdown.js';
+
+
 
 export function renderAppHeader() {
   const header = document.getElementById('appHeader');
@@ -23,3 +26,7 @@ export function renderAppHeader() {
     </div>
   `;
 }
+
+
+renderThemeDropdown();
+
