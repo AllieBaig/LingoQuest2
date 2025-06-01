@@ -8,8 +8,8 @@
 6) Timestamp: 2025-06-02 13:30 | File: js/utils/menuRenderer.js
 */
 
-import { loadMode } from '../modeLoader.js';
-import { logEvent } from '../eventLogger.js';
+import { loadMode } from './modeLoader.js';
+import { logEvent } from './eventLogger.js';
 
 export function renderGameMenu() {
   const menu = document.getElementById('menuArea');
