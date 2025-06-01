@@ -8,6 +8,10 @@
  * Timestamp: 2025-05-31 12:15 | File: js/uiFooter.js
  */
 
+
+import { renderThemeDropdown } from './themeDropdown.js';
+//renderThemeDropdown('appFooter');
+
 export function renderAppFooter() {
   const footer = document.getElementById('appFooter');
   if (!footer) return;
@@ -24,3 +28,8 @@ export function renderAppFooter() {
     document.getElementById('gameArea').hidden = true;
   });
 }
+
+renderThemeDropdown('appFooter');
+
+
+
