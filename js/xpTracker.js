@@ -64,4 +64,8 @@ export function initXPTracker() {
 
 export { initXPTracker as renderXPBar };
 
+export { updateXPUI as updateXP };
+
+
+
 
