@@ -1,34 +1,167 @@
-
-/* styles/themes.css - OS-inspired UI themes */
-
-body.theme-windows98 {
-  background-color: #c0c0c0;
-  font-family: 'MS Sans Serif', sans-serif;
+/* theme-windows98 */
+body.minimal-ui.theme-windows98 {
+  --bg-color: #f0f0f0;
+  --text-color: #111;
+  --btn-bg: #e0e0e0;
+  --btn-text: #000;
+  --accent-color: #0078d4;
+}
+body.minimal-ui.theme-windows98.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #fff;
+  --btn-bg: #333;
+  --btn-text: #fff;
+  --accent-color: #1e90ff;
 }
 
-body.theme-windowsxp {
-  background-color: #dceeff;
-  font-family: 'Tahoma', sans-serif;
+/* theme-windowsxp */
+body.minimal-ui.theme-windowsxp {
+  --bg-color: #f0f0f0;
+  --text-color: #111;
+  --btn-bg: #e0e0e0;
+  --btn-text: #000;
+  --accent-color: #0078d4;
+}
+body.minimal-ui.theme-windowsxp.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #fff;
+  --btn-bg: #333;
+  --btn-text: #fff;
+  --accent-color: #1e90ff;
 }
 
-body.theme-android {
-  background-color: #a8d5ba;
-  font-family: 'Roboto', sans-serif;
+/* theme-android */
+body.minimal-ui.theme-android {
+  --bg-color: #eef4ec;
+  --text-color: #222;
+  --btn-bg: #d7f4d7;
+  --btn-text: #000;
+  --accent-color: #34a853;
+}
+body.minimal-ui.theme-android.dark {
+  --bg-color: #1e2a1f;
+  --text-color: #d2ffd2;
+  --btn-bg: #2e4c2e;
+  --btn-text: #fff;
+  --accent-color: #34f897;
 }
 
-body.theme-ios {
-  background-color: #f0f0f5;
-  font-family: -apple-system, sans-serif;
+/* theme-ios */
+body.minimal-ui.theme-ios {
+  --bg-color: #fdfdfd;
+  --text-color: #000;
+  --btn-bg: #ebebf5;
+  --btn-text: #000;
+  --accent-color: #007aff;
+}
+body.minimal-ui.theme-ios.dark {
+  --bg-color: #000;
+  --text-color: #fff;
+  --btn-bg: #1c1c1e;
+  --btn-text: #fff;
+  --accent-color: #0a84ff;
 }
 
-body.theme-ubuntu {
-  background-color: #300a24;
-  color: #fefefe;
-  font-family: 'Ubuntu', sans-serif;
+/* theme-redhat */
+body.minimal-ui.theme-redhat {
+  --bg-color: #fff5f5;
+  --text-color: #330000;
+  --btn-bg: #ffcccc;
+  --btn-text: #990000;
+  --accent-color: #cc0000;
+}
+body.minimal-ui.theme-redhat.dark {
+  --bg-color: #2e0000;
+  --text-color: #fff;
+  --btn-bg: #550000;
+  --btn-text: #fff;
+  --accent-color: #ff4c4c;
 }
 
-body.theme-redhat {
-  background-color: #9e1b32;
-  color: #fff;
-  font-family: 'Courier New', monospace;
+/* theme-ubuntu */
+body.minimal-ui.theme-ubuntu {
+  --bg-color: #fdf6f0;
+  --text-color: #300a24;
+  --btn-bg: #f2dede;
+  --btn-text: #772953;
+  --accent-color: #dd4814;
+}
+body.minimal-ui.theme-ubuntu.dark {
+  --bg-color: #2c001e;
+  --text-color: #ffeefc;
+  --btn-bg: #3d0028;
+  --btn-text: #ffdde5;
+  --accent-color: #ff5722;
+}
+
+/* theme-holi */
+body.minimal-ui.theme-holi {
+  --bg-color: #fff0f5;
+  --text-color: #4b0082;
+  --btn-bg: #ffccff;
+  --btn-text: #4b0082;
+  --accent-color: #e75480;
+}
+
+/* theme-eid */
+body.minimal-ui.theme-eid {
+  --bg-color: #f0fff0;
+  --text-color: #006400;
+  --btn-bg: #d0f0c0;
+  --btn-text: #006400;
+  --accent-color: #228b22;
+}
+
+/* theme-independenceday-india */
+body.minimal-ui.theme-independenceday-india {
+  --bg-color: #fff;
+  --text-color: #000;
+  --btn-bg: #ffa500;
+  --btn-text: #138808;
+  --accent-color: #000080;
+}
+
+/* theme-bastilleday-france */
+body.minimal-ui.theme-bastilleday-france {
+  --bg-color: #ffffff;
+  --text-color: #002654;
+  --btn-bg: #ed2939;
+  --btn-text: #fff;
+  --accent-color: #0055a4;
+}
+
+/* theme-nationalday-germany */
+body.minimal-ui.theme-nationalday-germany {
+  --bg-color: #000;
+  --text-color: #ffce00;
+  --btn-bg: #dd0000;
+  --btn-text: #ffce00;
+  --accent-color: #000;
+}
+
+/* theme-nationalday-uae */
+body.minimal-ui.theme-nationalday-uae {
+  --bg-color: #ffffff;
+  --text-color: #00732f;
+  --btn-bg: #ff0000;
+  --btn-text: #000;
+  --accent-color: #00732f;
+}
+
+/* theme-nationalday-uk */
+body.minimal-ui.theme-nationalday-uk {
+  --bg-color: #ffffff;
+  --text-color: #00247d;
+  --btn-bg: #cf142b;
+  --btn-text: #fff;
+  --accent-color: #00247d;
+}
+
+/* theme-nationalday-china */
+body.minimal-ui.theme-nationalday-china {
+  --bg-color: #ffde00;
+  --text-color: #de2910;
+  --btn-bg: #de2910;
+  --btn-text: #fff;
+  --accent-color: #ffde00;
 }
