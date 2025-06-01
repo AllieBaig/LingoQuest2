@@ -13,6 +13,10 @@ import { loadLanguage } from './langManager.js';
 import { applyTheme } from './themeManager.js';
 import { applyFontChoice } from './fontManager.js';
 import { applyTranslations } from './langManager.js';
+import { setTheme } from '../ui/themeManager.js';
+import { logEvent } from '../tools/eventLogger.js';
+
+
 
 export function renderSettingsPanel(containerId = 'menuArea') {
   const container = document.getElementById(containerId);
@@ -79,3 +83,42 @@ export function renderSettingsPanel(containerId = 'menuArea') {
     applyFontChoice(e.target.value);
   });
 }
+
+
+
+export function renderThemeDropdown() {
+  const container = document.getElementById('appHeader') || document.getElementById('appFooter');
+  if (!container) return;
+
+  const label = document.createElement('label');
+  label.textContent = '🎨 Theme: ';
+  label.setAttribute('for', 'themeSelect');
+
+  const select = document.createElement('select');
+  select.id = 'themeSelect';
+  select.innerHTML = `
+    <option value="theme-windowsxp">🪟 Windows XP</option>
+    <option value="theme-ubuntu">🐧 Ubuntu</option>
+    <option value="theme-ios">📱 iOS</option>
+    <option value="theme-android">🤖 Android</option>
+    <option value="theme-redhat">🎩 Redhat</option>
+    <option value="theme-windows98">💾 Win98</option>
+  `;
+
+  select.value = localStorage.getItem('ui-theme') || 'theme-windowsxp';
+
+  select.addEventListener('change', (e) => {
+    const selected = e.target.value;
+    setTheme(selected);
+    logEvent('theme_selected', { theme: selected });
+  });
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'theme-picker';
+  wrapper.appendChild(label);
+  wrapper.appendChild(select);
+  container.appendChild(wrapper);
+}
+
+
+
