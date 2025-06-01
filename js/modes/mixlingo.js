@@ -80,12 +80,14 @@ export async function startMixLingo() {
 
   createSentenceBuilderArea(gameArea);
   loadNextQuestion();
-}
-
-if (!question?.id) {
+  if (!question?.id) {
   console.warn('❌ Skipping question with missing id:', question);
   return loadNextQuestion(); // Skip broken entries
 }
+  
+}
+
+
 
 function createSentenceBuilderArea(gameArea) {
   let builder = document.getElementById('sentenceBuilderArea');
