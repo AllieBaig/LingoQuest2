@@ -28,5 +28,5 @@ export function renderAppHeader() {
 }
 
 
-renderThemeDropdown();
+//renderThemeDropdown();
 
