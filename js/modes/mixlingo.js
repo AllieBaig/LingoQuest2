@@ -52,8 +52,7 @@ document.addEventListener('answerLangChanged', (e) => {
   }
 });
 
-console.log('Loaded questions:', questionPool);
-console.log('🧪 Valid pool length:', questionPool.length);
+
 
 export async function startMixLingo() {
   const gameArea = document.getElementById('gameArea');
@@ -69,6 +68,10 @@ export async function startMixLingo() {
   const path = `lang/mixlingo-${currentAnswerLang}.json`;
   const rawQuestions = await safeLoadQuestions(path);
   questionPool = shuffleArray(rawQuestions);
+  
+  console.log('Loaded questions:', questionPool);
+console.log('🧪 Valid pool length:', questionPool.length);
+  
   answeredIDs.clear();
 
   logEvent('game_start', {
