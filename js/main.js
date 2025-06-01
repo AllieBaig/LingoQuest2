@@ -29,7 +29,7 @@ const gameModes = [
   },
   
   {
-    id: 'mixLingoBtn', 
+    id: 'cinequest', 
     emoji: '🌍',
     title: 'CineQuest',
     modeKey: 'cinequest',
