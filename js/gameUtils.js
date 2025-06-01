@@ -7,9 +7,9 @@
 5) Timestamp: 2025-06-01 23:58 | File: js/gameUtils.js
 */
 
-import { renderFontSizeSlider } from './ui/fontScaler.js';
-import { renderAnswerLangDropdown } from './ui/answerLangDropdown.js';
-import { renderDecadeDropdown } from './ui/decadeDropdown.js';
+import { renderFontSizeSlider } from './fontScaler.js';
+import { renderAnswerLangDropdown } from './answerLangDropdown.js';
+import { renderDecadeDropdown } from './decadeDropdown.js';
 import { renderXPBar, updateXP } from './xpTracker.js';
 import { logEvent } from './eventLogger.js';
 
