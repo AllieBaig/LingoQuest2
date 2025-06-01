@@ -17,7 +17,7 @@ import {
 import {
   loadJSON,
   shuffleArray,
-  //showError
+  showError
 } from '../dataLoader.js';
 
 let relicQuestions = [];
