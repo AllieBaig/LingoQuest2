@@ -10,7 +10,7 @@
 */
 
 import { loadLanguage } from './langManager.js';
-import { applyTheme } from './themeManager.js';
+//import { applyTheme } from './themeManager.js';
 import { applyFontChoice } from './fontManager.js';
 import { applyTranslations } from './langManager.js';
 import { setTheme } from '../ui/themeManager.js';
