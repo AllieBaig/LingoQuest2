@@ -1,30 +1,38 @@
+
 /* 
-1) Purpose: Dynamically import game modes by name
-2) Features: Central loader for all modes (MixLingo, Echo Expedition, Relic)
-3) Usage: await loadMode('mixlingo') → then call .start()
+1) Purpose: Dynamically and statically import game modes
+2) Features: Supports both lazy-loading and preloaded game start
+3) Usage:
+   - Dynamic: await loadMode('mixlingo') → { start }
+   - Static: import { startMixLingo } from './modes/mixlingo.js';
 4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
-5) Timestamp: 2025-06-01 21:45 | File: js/modeLoader.js
+5) Timestamp: 2025-06-01 22:00 | File: js/modeLoader.js
 */
 
-export async function loadMode(modeName) {
+// 🔹 Optional static pre-imports (for faster access if needed)
+import * as mixlingoStatic from './modes/mixlingo.js';
+import * as echoExpStatic from './modes/echo-exp.js';
+import * as relicStatic from './modes/relic.js';
+
+export async function loadMode(modeName, method = 'dynamic') {
   switch (modeName) {
-    case 'mixlingo': {
-      const mod = await import('./modes/mixlingo.js');
-      return { start: mod.startMixLingo };
-    }
+    case 'mixlingo':
+      return method === 'static'
+        ? { start: mixlingoStatic.startMixLingo }
+        : { start: (await import('./modes/mixlingo.js')).startMixLingo };
 
-    case 'echoexp': {
-      const mod = await import('./modes/echo-exp.js');
-      return { start: mod.startEchoExpedition };
-    }
+    case 'echoexp':
+      return method === 'static'
+        ? { start: echoExpStatic.startEchoExpedition }
+        : { start: (await import('./modes/echo-exp.js')).startEchoExpedition };
 
-    case 'relic': {
-      const mod = await import('./modes/relic.js');
-      return { start: mod.startRelic };
-    }
+    case 'relic':
+      return method === 'static'
+        ? { start: relicStatic.startRelic }
+        : { start: (await import('./modes/relic.js')).startRelic };
 
-    // Add more modes as needed
     default:
       throw new Error(`Unknown game mode: ${modeName}`);
   }
 }
+
