@@ -19,6 +19,7 @@ const supportedThemes = [
   'redhat'
 ];
 
+/*
 export function applyTheme(theme) {
   if (!supportedThemes.includes(theme)) {
     console.warn(`⚠️ Unknown theme: ${theme}, falling back to '${defaultTheme}'`);
@@ -32,6 +33,32 @@ export function applyTheme(theme) {
   const event = new CustomEvent('themeChanged', { detail: theme });
   document.dispatchEvent(event);
 }
+*/
+
+export function applyTheme(themeName = null) {
+  const validThemes = [
+    'theme-windowsxp', 'theme-ubuntu', 'theme-ios', 'theme-android', 'theme-redhat', 'theme-windows98',
+    'theme-christmas', 'theme-halloween', 'theme-eid', 'theme-diwali', 'theme-hanukkah', 'theme-vesak',
+    'theme-usa', 'theme-india', 'theme-france', 'theme-germany', 'theme-canada', 'theme-japan',
+    'theme-uk', 'theme-china', 'theme-uae'
+  ];
+
+  if (!themeName) {
+    themeName = localStorage.getItem('ui-theme') || 'theme-windowsxp';
+  }
+
+  if (!validThemes.includes(themeName)) {
+    console.warn(`Unknown theme: ${themeName}, falling back to 'minimal'`);
+    themeName = 'theme-windowsxp'; // use your desired fallback
+  }
+
+  // Apply theme to body
+  document.body.classList.remove(...Array.from(document.body.classList).filter(c => c.startsWith('theme-')));
+  document.body.classList.add(themeName);
+}
+
+
+
 
 export function loadSavedTheme() {
   const saved = localStorage.getItem('selectedTheme') || defaultTheme;
