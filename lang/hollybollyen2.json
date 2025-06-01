@@ -1,0 +1,224 @@
+
+[
+  {
+    "id": "hb-001",
+    "place": "Titanic ship",
+    "animal": "Seagull",
+    "thing": "Necklace",
+    "movie": "Titanic",
+    "bollywood": "Hum Dil De Chuke Sanam",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$2.2B",
+        "bollywood": "$25M"
+      },
+      "actorWorth": {
+        "hollywood": "$300M (Leonardo DiCaprio)",
+        "bollywood": "$45M (Salman Khan)"
+      },
+      "directorWorth": {
+        "hollywood": "$800M (James Cameron)",
+        "bollywood": "$60M (Sanjay Leela Bhansali)"
+      }
+    }
+  },
+  {
+    "id": "hb-002",
+    "place": "NY skyscraper",
+    "animal": "Gorilla",
+    "thing": "Airplane",
+    "movie": "King Kong",
+    "bollywood": "Krrish",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$550M",
+        "bollywood": "$40M"
+      },
+      "actorWorth": {
+        "hollywood": "$300M (Naomi Watts)",
+        "bollywood": "$75M (Hrithik Roshan)"
+      },
+      "directorWorth": {
+        "hollywood": "$20M (Peter Jackson)",
+        "bollywood": "$15M (Rakesh Roshan)"
+      }
+    }
+  },
+  {
+    "id": "hb-003",
+    "place": "Mars",
+    "animal": "Lab rat",
+    "thing": "Helmet",
+    "movie": "The Martian",
+    "bollywood": "Mission Mangal",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$630M",
+        "bollywood": "$42M"
+      },
+      "actorWorth": {
+        "hollywood": "$170M (Matt Damon)",
+        "bollywood": "$50M (Akshay Kumar)"
+      },
+      "directorWorth": {
+        "hollywood": "$30M (Ridley Scott)",
+        "bollywood": "$10M (Jagan Shakti)"
+      }
+    }
+  },
+  {
+    "id": "hb-004",
+    "place": "Jungle",
+    "animal": "Bear",
+    "thing": "Fire",
+    "movie": "The Jungle Book",
+    "bollywood": "Mowgli (Netflix Hindi)",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$966M",
+        "bollywood": "$10M (approx)"
+      },
+      "actorWorth": {
+        "hollywood": "$50M (Neel Sethi)",
+        "bollywood": "$2M (Rohan Chand)"
+      },
+      "directorWorth": {
+        "hollywood": "$60M (Jon Favreau)",
+        "bollywood": "$5M (Andy Serkis)"
+      }
+    }
+  },
+  {
+    "id": "hb-005",
+    "place": "Manhattan",
+    "animal": "Spider",
+    "thing": "Web-shooter",
+    "movie": "Spider-Man",
+    "bollywood": "Shaktimaan",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$825M",
+        "bollywood": "$5M (TV + Film est.)"
+      },
+      "actorWorth": {
+        "hollywood": "$200M (Tobey Maguire)",
+        "bollywood": "$10M (Mukesh Khanna)"
+      },
+      "directorWorth": {
+        "hollywood": "$90M (Sam Raimi)",
+        "bollywood": "$3M (Dinker Jani)"
+      }
+    }
+  },
+  {
+    "id": "hb-006",
+    "place": "FBI HQ",
+    "animal": "Wolf",
+    "thing": "Mask",
+    "movie": "The Mask",
+    "bollywood": "Awara Paagal Deewana",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$351M",
+        "bollywood": "$12M"
+      },
+      "actorWorth": {
+        "hollywood": "$180M (Jim Carrey)",
+        "bollywood": "$35M (Akshay Kumar)"
+      },
+      "directorWorth": {
+        "hollywood": "$12M (Chuck Russell)",
+        "bollywood": "$4M (Vikram Bhatt)"
+      }
+    }
+  },
+  {
+    "id": "hb-007",
+    "place": "Matrix world",
+    "animal": "White rabbit",
+    "thing": "Sunglasses",
+    "movie": "The Matrix",
+    "bollywood": "Love Story 2050",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$466M",
+        "bollywood": "$4.5M"
+      },
+      "actorWorth": {
+        "hollywood": "$400M (Keanu Reeves)",
+        "bollywood": "$12M (Harman Baweja)"
+      },
+      "directorWorth": {
+        "hollywood": "$250M (Wachowski Sisters)",
+        "bollywood": "$10M (Harry Baweja)"
+      }
+    }
+  },
+  {
+    "id": "hb-008",
+    "place": "New York",
+    "animal": "Lizard",
+    "thing": "Mutagen",
+    "movie": "TMNT",
+    "bollywood": "Aabra Ka Daabra",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$485M",
+        "bollywood": "$3M"
+      },
+      "actorWorth": {
+        "hollywood": "$10M (Megan Fox)",
+        "bollywood": "$0.5M (Athit Naik)"
+      },
+      "directorWorth": {
+        "hollywood": "$20M (Jonathan Liebesman)",
+        "bollywood": "$1M (Dheeraj Kumar)"
+      }
+    }
+  },
+  {
+    "id": "hb-009",
+    "place": "Desert",
+    "animal": "Camel",
+    "thing": "Magic carpet",
+    "movie": "Aladdin",
+    "bollywood": "Aladdin (2009)",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$1.05B",
+        "bollywood": "$7M"
+      },
+      "actorWorth": {
+        "hollywood": "$350M (Will Smith)",
+        "bollywood": "$6M (Riteish Deshmukh)"
+      },
+      "directorWorth": {
+        "hollywood": "$20M (Guy Ritchie)",
+        "bollywood": "$2M (Sujoy Ghosh)"
+      }
+    }
+  },
+  {
+    "id": "hb-010",
+    "place": "Airport",
+    "animal": "Dog",
+    "thing": "Suitcase",
+    "movie": "Hachi: A Dog’s Tale",
+    "bollywood": "Entertainment",
+    "rewards": {
+      "boxOffice": {
+        "hollywood": "$46M",
+        "bollywood": "$12M"
+      },
+      "actorWorth": {
+        "hollywood": "$300M (Richard Gere)",
+        "bollywood": "$50M (Akshay Kumar)"
+      },
+      "directorWorth": {
+        "hollywood": "$5M (Lasse Hallström)",
+        "bollywood": "$3M (Sajid-Farhad)"
+      }
+    }
+  }
+]
+
