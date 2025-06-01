@@ -60,3 +60,17 @@ export function clearDataCache(path = null) {
   }
 }
 
+export function showError(message) {
+  console.error(message);
+  const container = document.getElementById('gameArea');
+  if (container) {
+    container.innerHTML = `
+      <div class="error-message" style="text-align: center; padding: 20px; color: #dc3545;">
+        <h3>❌ Error</h3>
+        <p>${message}</p>
+        <button onclick="location.reload()" style="padding: 8px 16px; margin-top: 10px; cursor: pointer;">🔄 Retry</button>
+      </div>
+    `;
+  }
+}
+
