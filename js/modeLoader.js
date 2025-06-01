@@ -14,6 +14,7 @@ import * as mixlingoStatic from './modes/mixlingo.js';
 import * as echoExpStatic from './modes/echo-exp.js';
 import * as relicStatic from './modes/relic.js';
 import * as cinequestStatic from './modes/cinequest.js';
+import * as hollybollyStatic from './modes/hollybolly.js';
 
 
 
@@ -40,6 +41,10 @@ case 'cinequest':
         : { start: (await import('./modes/cinequest.js')).startCineQuest };
 
     
+case 'hollybolly':
+      return method === 'static'
+        ? { start: hollybollyStatic.startHollyBolly }
+        : { start: (await import('./modes/hollybolly.js')).startHollyBolly };
 
 
     default:
