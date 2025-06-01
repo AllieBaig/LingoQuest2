@@ -1,73 +1,123 @@
-
 /* 
-1) Purpose: Load and cache JSON data (e.g., questions, themes)
-2) Features: fetch with fallback, merge multiple files, in-memory cache
-3) Used in: mixlingo.js, echo-exp.js, langManager.js (future)
+1) Purpose: Relic Mode (MCQ + Riddles/Emojis with XP + Reward)
+2) Clue Types: Riddle + Emoji-based. XP based on correct MCQ answers.
+3) Depends on: gameUtils.js, dataLoader.js
 4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
-5) Timestamp: 2025-06-01 02:20 | File: js/dataLoader.js
+5) Timestamp: 2025-06-01 08:25 | File: js/modes/relic.js
 */
 
-import { loadJSON, shuffleArray, showError } from '../dataLoader.js';
+import {
+  logEvent,
+  addXP,
+  autoCheckMCQ,
+  renderIngameHead,
+  renderIngameFoot
+} from '../gameUtils.js';
 
-const cache = {};
+import {
+  loadJSON,
+  shuffleArray,
+  showError
+} from '../dataLoader.js';
 
-export async function loadJSON(path) {
-  if (cache[path]) return cache[path];
-  try {
-    const res = await fetch(path);
-    const json = await res.json();
-    cache[path] = json;
-    return json;
-  } catch (err) {
-    console.warn(`⚠️ Could not load ${path}`, err);
-    return [];
-  }
-}
+let relicQuestions = [];
+let currentIndex = 0;
+let answeredIds = new Set();
 
-export async function loadMultipleJSON(paths = []) {
-  const results = [];
-  for (const path of paths) {
-    const data = await loadJSON(path);
-    results.push(...data);
-  }
-  return results;
-}
+export async function startRelic() {
+  logEvent('game_started', { mode: 'Relic' });
 
-export function clearDataCache(path = null) {
-  if (path) {
-    delete cache[path];
-  } else {
-    Object.keys(cache).forEach(k => delete cache[k]);
-  }
-}
-
-// Add the missing utility functions
-export function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
-export function showError(message) {
-  console.error(message);
+  document.getElementById('menuArea').hidden = true;
+  document.getElementById('gameArea').hidden = false;
   const container = document.getElementById('gameArea');
-  if (container) {
-    container.innerHTML = `
-      <div class="error-message" style="text-align: center; padding: 20px; color: #dc3545;">
-        <h3>❌ Error</h3>
-        <p>${message}</p>
-        <button onclick="location.reload()" style="padding: 8px 16px; margin-top: 10px; cursor: pointer;">🔄 Retry</button>
-      </div>
-    `;
+  container.innerHTML = '';
+
+  renderIngameHead(container);
+  renderIngameFoot(container);
+
+  try {
+    const lang = localStorage.getItem('ui-answers') || 'en';
+    const data = await loadJSON(`lang/relic-${lang}.json`);
+    if (!Array.isArray(data)) throw new Error('Invalid relic question format');
+
+    relicQuestions = shuffleArray(data).filter(q => !answeredIds.has(q.id));
+    currentIndex = 0;
+
+    showRelicPrompt(container);
+  } catch (e) {
+    showError(`❌ Failed to load Relic mode: ${e.message}`);
   }
 }
 
-// Export both specific and generic start functions for compatibility
-//export { startRelic, startRelic as start };
-export { startRelic };
+function showRelicPrompt(container) {
+  if (currentIndex >= relicQuestions.length) {
+    return showRelicReward(container);
+  }
 
+  const q = relicQuestions[currentIndex];
+  if (!q || !q.question || !q.choices || !Array.isArray(q.choices)) {
+    console.warn('⚠️ Invalid question skipped', q);
+    currentIndex++;
+    showRelicPrompt(container);
+    return;
+  }
 
+  container.innerHTML = ''; // Clear for current prompt
+  renderIngameHead(container);
+  renderIngameFoot(container);
 
+  const clue = document.createElement('p');
+  clue.className = 'relic-clue';
+  clue.textContent = q.question;
+
+  const options = document.createElement('div');
+  options.className = 'mcq-options';
+
+  const difficulty = localStorage.getItem('game-difficulty') || 'easy';
+  const maxOptions = { easy: 2, medium: 3, hard: 4 }[difficulty] || 2;
+
+  const choices = shuffleArray(q.choices).slice(0, maxOptions);
+
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.textContent = choice;
+    btn.className = 'mcq-btn';
+    btn.addEventListener('click', () => {
+      const correct = choice === q.answer;
+      autoCheckMCQ(btn, correct);
+      if (correct) {
+        addXP(10);
+        answeredIds.add(q.id);
+        setTimeout(() => {
+          currentIndex++;
+          showRelicPrompt(container);
+        }, 800);
+      } else {
+        setTimeout(() => autoCheckMCQ(btn, correct, true), 300);
+      }
+    });
+    options.appendChild(btn);
+  });
+
+  container.appendChild(clue);
+  container.appendChild(options);
+}
+
+function showRelicReward(container) {
+  logEvent('game_completed', { mode: 'Relic', total: answeredIds.size });
+
+  const msg = document.createElement('div');
+  msg.className = 'relic-reward';
+  msg.innerHTML = `
+    <h3>🔓 You've discovered a hidden Relic!</h3>
+    <p>🧠 You solved <strong>${answeredIds.size}</strong> riddles and earned relic wisdom.</p>
+    <button id="backToMenu">🔙 Back to Menu</button>
+  `;
+
+  container.innerHTML = '';
+  container.appendChild(msg);
+
+  document.getElementById('backToMenu')?.addEventListener('click', () => {
+    location.reload(); // Or call a shared resetToMenu() if available
+  });
+}
