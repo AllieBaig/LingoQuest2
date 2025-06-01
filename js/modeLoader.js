@@ -1,6 +1,4 @@
 
-📄 File: js/modeLoader.js
-
 /*
 1) Purpose: Dynamically and statically import game modes
 2) Features: Supports both lazy-loading and preloaded game start
