@@ -106,6 +106,7 @@
     "boxOffice": {
       "hollywood": "$1.05B",
       "bollywood": "$7M"
+      }
   
   },
   
@@ -119,8 +120,8 @@
     "boxOffice": {
       "hollywood": "$46M",
       "bollywood": "$12M"
-    }
-  }
+    },
+  
 
 
 
