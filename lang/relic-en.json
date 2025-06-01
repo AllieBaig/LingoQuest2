@@ -1,0 +1,63 @@
+
+[
+  {
+    "id": "relic-en-001",
+    "riddle": "I have a face but no eyes, hands but no arms. What am I?",
+    "correct": "Clock",
+    "choices": ["Clock", "Map", "Robot", "Sundial"]
+  },
+  {
+    "id": "relic-en-002",
+    "riddle": "I speak without a mouth and hear without ears. What am I?",
+    "correct": "Echo",
+    "choices": ["Echo", "Ghost", "Wind", "Shadow"]
+  },
+  {
+    "id": "relic-en-003",
+    "riddle": "The more you take, the more I leave behind. What am I?",
+    "correct": "Footsteps",
+    "choices": ["Footsteps", "Memories", "Time", "Coins"]
+  },
+  {
+    "id": "relic-en-004",
+    "riddle": "I go up but never come down. What am I?",
+    "correct": "Age",
+    "choices": ["Age", "Smoke", "Balloon", "Hope"]
+  },
+  {
+    "id": "relic-en-005",
+    "riddle": "I am always in front of you but can’t be seen. What am I?",
+    "correct": "Future",
+    "choices": ["Future", "Air", "Shadow", "Wind"]
+  },
+  {
+    "id": "relic-en-006",
+    "riddle": "The more you share me, the less you have. What am I?",
+    "correct": "Secret",
+    "choices": ["Secret", "Food", "Money", "Love"]
+  },
+  {
+    "id": "relic-en-007",
+    "riddle": "I fly without wings, cry without eyes. What am I?",
+    "correct": "Cloud",
+    "choices": ["Cloud", "Leaf", "Storm", "Rain"]
+  },
+  {
+    "id": "relic-en-008",
+    "riddle": "I shrink smaller every time I take a bath. What am I?",
+    "correct": "Soap",
+    "choices": ["Soap", "Ice", "Stone", "Towel"]
+  },
+  {
+    "id": "relic-en-009",
+    "riddle": "I have keys but open no locks. What am I?",
+    "correct": "Piano",
+    "choices": ["Piano", "Keyboard", "Map", "Treasure"]
+  },
+  {
+    "id": "relic-en-010",
+    "riddle": "I’m tall when I’m young, and short when I’m old. What am I?",
+    "correct": "Candle",
+    "choices": ["Candle", "Tree", "Boy", "Shadow"]
+  }
+]
