@@ -83,4 +83,13 @@ export function shuffleArray(array) {
   return shuffled;
 }
 
+export {
+  loadJSON,
+  loadMultipleJSON,
+  clearDataCache,
+  shuffleArray,
+  showError
+};
+
+
 
