@@ -13,6 +13,9 @@
 import * as mixlingoStatic from './modes/mixlingo.js';
 import * as echoExpStatic from './modes/echo-exp.js';
 import * as relicStatic from './modes/relic.js';
+import * as cinequestStatic from './modes/cinequest.js';
+
+
 
 export async function loadMode(modeName, method = 'dynamic') {
   switch (modeName) {
@@ -30,6 +33,14 @@ export async function loadMode(modeName, method = 'dynamic') {
       return method === 'static'
         ? { start: relicStatic.startRelic }
         : { start: (await import('./modes/relic.js')).startRelic };
+
+case 'cinequest':
+      return method === 'static'
+        ? { start: cinequestStatic.startCineQuest }
+        : { start: (await import('./modes/cinequest.js')).startRelic };
+
+    
+
 
     default:
       throw new Error(`Unknown game mode: ${modeName}`);
