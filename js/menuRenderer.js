@@ -9,7 +9,7 @@
 */
 
 import { loadMode } from '../modeLoader.js';
-import { logEvent } from '../tools/eventLogger.js';
+import { logEvent } from '../eventLogger.js';
 
 export function renderGameMenu() {
   const menu = document.getElementById('menuArea');
