@@ -8,7 +8,8 @@
 6) Timestamp: 2025-06-01 23:50 | File: js/app.js
 */
 
-import { applySavedTheme } from './themeManager.js';
+//import { applySavedTheme } from './themeManager.js';
+import { applyTheme } from './themeManager.js';
 import { setupUIModeToggle } from './uiModeManager.js';
 import { renderAppHeader } from './uiHeader.js';
 import { renderAppFooter } from './uiFooter.js';
