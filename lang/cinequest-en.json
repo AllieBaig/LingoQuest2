@@ -1,0 +1,105 @@
+
+[
+  {
+    "id": "cq-en-001",
+    "clues": {
+      "place": "Hogwarts School of Witchcraft and Wizardry",
+      "animal": "Owl",
+      "thing": "Wand"
+    },
+    "answer": "Harry Potter and the Sorcerer's Stone",
+    "decade": "2000s"
+  },
+  {
+    "id": "cq-en-002",
+    "clues": {
+      "place": "Pandora",
+      "animal": "Banshee",
+      "thing": "Neural Link"
+    },
+    "answer": "Avatar",
+    "decade": "2000s"
+  },
+  {
+    "id": "cq-en-003",
+    "clues": {
+      "place": "Isla Nublar",
+      "animal": "T-Rex",
+      "thing": "Amber Cane"
+    },
+    "answer": "Jurassic Park",
+    "decade": "1990s"
+  },
+  {
+    "id": "cq-en-004",
+    "clues": {
+      "place": "Emerald City",
+      "animal": "Flying Monkey",
+      "thing": "Ruby Slippers"
+    },
+    "answer": "The Wizard of Oz",
+    "decade": "1930s"
+  },
+  {
+    "id": "cq-en-005",
+    "clues": {
+      "place": "Middle-earth",
+      "animal": "Eagle",
+      "thing": "The One Ring"
+    },
+    "answer": "The Lord of the Rings: The Fellowship of the Ring",
+    "decade": "2000s"
+  },
+  {
+    "id": "cq-en-006",
+    "clues": {
+      "place": "Gotham City",
+      "animal": "Bat",
+      "thing": "Batarang"
+    },
+    "answer": "The Dark Knight",
+    "decade": "2000s"
+  },
+  {
+    "id": "cq-en-007",
+    "clues": {
+      "place": "Titanic",
+      "animal": "Dog (in steerage)",
+      "thing": "Heart of the Ocean Necklace"
+    },
+    "answer": "Titanic",
+    "decade": "1990s"
+  },
+  {
+    "id": "cq-en-008",
+    "clues": {
+      "place": "The Shire",
+      "animal": "Pony",
+      "thing": "Sting (sword)"
+    },
+    "answer": "The Hobbit: An Unexpected Journey",
+    "decade": "2010s"
+  },
+  {
+    "id": "cq-en-009",
+    "clues": {
+      "place": "Cyberdyne Systems Lab",
+      "animal": "Dog (senses Terminators)",
+      "thing": "Time Travel Pod"
+    },
+    "answer": "Terminator 2: Judgment Day",
+    "decade": "1990s"
+  },
+  {
+    "id": "cq-en-010",
+    "clues": {
+      "place": "Andy's Room",
+      "animal": "Dinosaur (Rex)",
+      "thing": "Pull-string Cowboy Doll"
+    },
+    "answer": "Toy Story",
+    "decade": "1990s"
+  }
+]
+
+
