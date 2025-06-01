@@ -6,6 +6,9 @@
 4) MIT License: https://github.com/AllieBaig/LingoQuest2/blob/main/LICENSE
 5) Timestamp: 2025-06-01 02:20 | File: js/dataLoader.js
 */
+
+import { loadJSON, shuffleArray, showError } from '../dataLoader.js';
+
 const cache = {};
 
 export async function loadJSON(path) {
@@ -64,4 +67,7 @@ export function showError(message) {
 
 // Export both specific and generic start functions for compatibility
 //export { startRelic, startRelic as start };
+export { startRelic };
+
+
 
