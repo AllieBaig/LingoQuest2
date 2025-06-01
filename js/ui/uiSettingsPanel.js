@@ -10,7 +10,9 @@
 */
 
 import { loadLanguage } from './langManager.js';
-import { applyTheme } from './themeManager.js';
+//import { applyTheme } from './themeManager.js';
+import { setTheme, toggleDarkMode } from './themeManager.js';
+
 import { applyFontChoice } from './fontManager.js';
 import { applyTranslations } from './langManager.js';
 
@@ -79,3 +81,4 @@ export function renderSettingsPanel(containerId = 'menuArea') {
     applyFontChoice(e.target.value);
   });
 }
+
