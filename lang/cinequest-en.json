@@ -100,6 +100,113 @@
     "answer": "Toy Story",
     "decade": "1990s"
   }
+  
+  
+  {
+    "id": "cq-en-011",
+    "clues": {
+      "place": "Nakatomi Plaza",
+      "animal": "Police Dog",
+      "thing": "Walkie Talkie"
+    },
+    "answer": "Die Hard",
+    "decade": "1980s"
+  },
+  {
+    "id": "cq-en-012",
+    "clues": {
+      "place": "Hill Valley",
+      "animal": "Einstein the Dog",
+      "thing": "DeLorean"
+    },
+    "answer": "Back to the Future",
+    "decade": "1980s"
+  },
+  {
+    "id": "cq-en-013",
+    "clues": {
+      "place": "Amity Island",
+      "animal": "Great White Shark",
+      "thing": "Yellow Barrel"
+    },
+    "answer": "Jaws",
+    "decade": "1970s"
+  },
+  {
+    "id": "cq-en-014",
+    "clues": {
+      "place": "District 12",
+      "animal": "Mockingjay",
+      "thing": "Bow and Arrow"
+    },
+    "answer": "The Hunger Games",
+    "decade": "2010s"
+  },
+  {
+    "id": "cq-en-015",
+    "clues": {
+      "place": "Wakanda",
+      "animal": "Panther",
+      "thing": "Vibranium Suit"
+    },
+    "answer": "Black Panther",
+    "decade": "2010s"
+  },
+  {
+    "id": "cq-en-016",
+    "clues": {
+      "place": "Elm Street",
+      "animal": "Cat (sensing Freddy)",
+      "thing": "Glove with Blades"
+    },
+    "answer": "A Nightmare on Elm Street",
+    "decade": "1980s"
+  },
+  {
+    "id": "cq-en-017",
+    "clues": {
+      "place": "Oz",
+      "animal": "Toto",
+      "thing": "Yellow Brick Road"
+    },
+    "answer": "The Wizard of Oz",
+    "decade": "1930s"
+  },
+  {
+    "id": "cq-en-018",
+    "clues": {
+      "place": "The Overlook Hotel",
+      "animal": "Stag in maze",
+      "thing": "Axe"
+    },
+    "answer": "The Shining",
+    "decade": "1980s"
+  },
+  {
+    "id": "cq-en-019",
+    "clues": {
+      "place": "Mordor",
+      "animal": "Fellbeast",
+      "thing": "Eye of Sauron"
+    },
+    "answer": "The Lord of the Rings: The Return of the King",
+    "decade": "2000s"
+  },
+  {
+    "id": "cq-en-020",
+    "clues": {
+      "place": "The Matrix",
+      "animal": "White Rabbit",
+      "thing": "Red Pill"
+    },
+    "answer": "The Matrix",
+    "decade": "1990s"
+  }
+]
+  
+  
+  
+  
 ]
 
 
