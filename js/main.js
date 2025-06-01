@@ -27,9 +27,17 @@ const gameModes = [
     modeKey: 'mixlingo',
     i18nKey: 'start_mixlingo'
   },
+{
+    id: 'hollyBollyBtn', 
+    emoji: '🌍',
+    title: 'HollyBolly',
+    modeKey: 'hollybolly',
+    i18nKey: 'start_hollybolly'
+  },
+  
   
   {
-    id: 'cinequest', 
+    id: 'cineQuestBtn', 
     emoji: '🌍',
     title: 'CineQuest',
     modeKey: 'cinequest',
