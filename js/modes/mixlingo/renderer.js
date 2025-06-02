@@ -47,6 +47,7 @@ export function renderMixLingoFoot(container) {
 }
 
 
+/*
 export function renderMixLingoFoot(container) {
   const footer = document.createElement('div');
   footer.className = 'ingame-foot-extra';
@@ -67,6 +68,8 @@ export function renderMixLingoFoot(container) {
     window.dispatchEvent(new Event('mixlingoLangChanged'));
   });
 }
+*/
+
 
 export function createSentenceBuilderArea(gameArea) {
   let builder = document.getElementById('sentenceBuilderArea');
