@@ -36,6 +36,22 @@ export function shuffleArray(arr) {
   return copy;
 }
 
+// ✅ Show error in-game area
+export function showUserError(message) {
+  const builder = document.getElementById('sentenceBuilderArea') || document.getElementById('gameArea');
+  if (builder) {
+    builder.innerHTML = `
+      <div class="error-box">
+        <h2>⚠️ Error</h2>
+        <p>${message}</p>
+        <p>Please try again or select another game mode.</p>
+      </div>
+    `;
+  }
+}
+
+
+
 // ✅ Validate question object has all required fields
 export function verifyQuestionStructure(obj, fields = []) {
   if (!obj || typeof obj !== 'object') return false;
