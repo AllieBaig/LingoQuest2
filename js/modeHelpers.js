@@ -8,7 +8,7 @@
 */
 
 import { loadJSON } from './dataLoader.js';
-import { showUserError } from './gameUtils.js';
+//import { showUserError } from './gameUtils.js';
 import { logEvent } from './eventLogger.js';
 
 // ✅ Safe question loader with fallback
