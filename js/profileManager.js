@@ -52,3 +52,20 @@ function generateNickname() {
   return `${adj}${ani}`;
 }
 
+// js/profileManager.js
+
+/*
+export function initProfile() {
+  console.log('🔐 Profile initialized.');
+  // load nickname, avatar, XP, etc.
+}
+*/
+
+
+export function initProfile() {
+  getUserProfile(); // ensures profile exists
+  console.log('🧑‍💼 Profile initialized.');
+}
+
+
+
