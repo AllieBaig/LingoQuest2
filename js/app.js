@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const { renderFooter } = footerModule;
     
     console.log('🏠 Loading main menu module...');
-    const mainModule = await import('./js/main.js');
+    const mainModule = await import('./main.js');
     const { showMainMenu } = mainModule;
     
     // Render UI components
