@@ -13,7 +13,7 @@ import { safeLoadQuestions, shuffleArray, showUserError } from '../../modeHelper
 import { logEvent } from '../../gameUtils.js';
 import { resetMixLingoState, answeredIDs, questionPool } from './state.js';
 
-let currentAnswerLang = localStorage.getItem('answerLang') || 'en';
+export let currentAnswerLang = localStorage.getItem('answerLang') || 'en';
 let difficulty = localStorage.getItem('game-difficulty') || 'medium';
 
 export async function startMixLingo() {
@@ -44,7 +44,17 @@ export async function startMixLingo() {
   loadNextQuestion();
 }
 
+/*
 // Language switch listener
 document.addEventListener('answerLangChanged', async (e) => {
   currentAnswerLang = e.detail;
 });
+*/
+
+
+// Language switch listener (from dropdown in renderer.js)
+window.addEventListener('mixlingoLangChanged', () => {
+  currentAnswerLang = localStorage.getItem('mixlingo-answerLang') || 'en';
+});
+
+
