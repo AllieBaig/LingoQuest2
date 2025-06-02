@@ -21,26 +21,31 @@ export async function loadMode(modeName, method = 'dynamic') {
   try {
     switch (modeName) {
       case 'mixlingo':
+        console.log('🎮 Starting MixLingo...');
         return method === 'static'
           ? { start: mixlingoStatic.startMixLingo }
           : { start: (await import('./modes/mixlingo/mixlingo.js')).startMixLingo };
 
       case 'echoexp':
+        console.log('Starting EchoExp...');
         return method === 'static'
           ? { start: echoExpStatic.startEchoExpedition }
           : { start: (await import('./modes/echo-exp.js')).startEchoExpedition };
 
       case 'relic':
+        console.log('Starting Relic...');
         return method === 'static'
           ? { start: relicStatic.startRelic }
           : { start: (await import('./modes/relic/relic.js')).startRelic };
 
       case 'cinequest':
+        console.log('Starting CineQuest...');
         return method === 'static'
           ? { start: cinequestStatic.startCineQuest }
           : { start: (await import('./modes/cinequest.js')).startCineQuest };
 
       case 'hollybolly':
+        console.log('Starting HollyBolly...');
         return method === 'static'
           ? { start: hollybollyStatic.startHollyBolly }
           : { start: (await import('./modes/hollybolly/hollybolly.js')).startHollyBolly };
