@@ -12,6 +12,62 @@ import { autoCheckMCQ, addXP, logEvent } from '../../gameUtils.js';
 import { optionCount, showUserError } from '../../modeHelpers.js';
 import { loadNextQuestion } from './logic.js';
 
+
+
+// 🧩 Ingame Head UI for MixLingo
+export function renderMixLingoHead(container) {
+  const header = document.createElement('div');
+  header.className = 'ingame-head-extra';
+
+  header.innerHTML = `
+    <label for="answerLang">Answers in Language:</label>
+    <select id="answerLang">
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="de">🇩🇪 Deutsch</option>
+    </select>
+  `;
+
+  container.appendChild(header);
+
+  const langSelect = header.querySelector('#answerLang');
+  langSelect.value = localStorage.getItem('mixlingo-answerLang') || 'fr';
+  langSelect.addEventListener('change', (e) => {
+    localStorage.setItem('mixlingo-answerLang', e.target.value);
+    window.dispatchEvent(new Event('mixlingoLangChanged'));
+  });
+}
+
+// 🧩 Ingame Foot UI for MixLingo (optional extra controls)
+export function renderMixLingoFoot(container) {
+  const footNote = document.createElement('div');
+  footNote.className = 'ingame-foot-note';
+  footNote.innerHTML = `<p>🌐 Select the language in which answer options appear.</p>`;
+  container.appendChild(footNote);
+}
+
+
+export function renderMixLingoFoot(container) {
+  const footer = document.createElement('div');
+  footer.className = 'ingame-foot-extra';
+  footer.innerHTML = `
+    <label for="answerLang">Answers in Language:</label>
+    <select id="answerLang">
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="de">🇩🇪 Deutsch</option>
+    </select>
+  `;
+  container.appendChild(footer);
+
+  const langSelect = footer.querySelector('#answerLang');
+  langSelect.value = localStorage.getItem('mixlingo-answerLang') || 'fr';
+  langSelect.addEventListener('change', (e) => {
+    localStorage.setItem('mixlingo-answerLang', e.target.value);
+    window.dispatchEvent(new Event('mixlingoLangChanged'));
+  });
+}
+
 export function createSentenceBuilderArea(gameArea) {
   let builder = document.getElementById('sentenceBuilderArea');
   if (!builder) {
