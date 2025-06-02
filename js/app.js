@@ -1,6 +1,6 @@
 
 /* 
-1) Purpose: Bootstraps LingoQuest2 app on load
+1) Purpose: Bootstraps LingoQuest2 app on load.
 2) Features: Loads profile, theme, header/footer, routes to main
 3) Dependencies: profileManager.js, themeManager.js, uiHeader.js
 4) Related: js/profile/, js/ui/, js/main.js
