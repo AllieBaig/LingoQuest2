@@ -32,31 +32,39 @@ export function renderGameMenu() {
 
   // Add event listeners
   document.getElementById('btnMixLingo')?.addEventListener('click', async () => {
+    console.log('📍 MixLingo button clicked. Loading MixLingo mode...');
     logEvent('menu_click', { mode: 'MixLingo' });
     const mod = await loadMode('mixlingo');
     mod.start();
   });
 
+  
   document.getElementById('btnEchoExp')?.addEventListener('click', async () => {
+  console.log('📍 EchoExp button clicked. Loading EchoExp mode...');
     logEvent('menu_click', { mode: 'Echo Expedition' });
     const mod = await loadMode('echoexp');
     mod.start();
   });
 
+
+  
   document.getElementById('btnRelic')?.addEventListener('click', async () => {
+  console.log('📍 Relic button clicked. Loading Relic mode...');
     logEvent('menu_click', { mode: 'Word Relic' });
     const mod = await loadMode('relic');
     mod.start();
   });
 
   document.getElementById('btnCineQuest')?.addEventListener('click', async () => {
+    console.log('📍 CineQuest button clicked. Loading CineQuest mode...');
     logEvent('menu_click', { mode: 'CineQuest' });
     const mod = await loadMode('cinequest');
     mod.start();
   });
 
  document.getElementById('btnHollyBolly')?.addEventListener('click', async () => {
-    logEvent('menu_click', { mode: 'HollyBolly' });
+   console.log('📍 HollyBolly button clicked. Loading HollyBolly mode...'); 
+   logEvent('menu_click', { mode: 'HollyBolly' });
     const mod = await loadMode('hollybolly');
     mod.start();
   });
