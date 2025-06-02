@@ -49,7 +49,25 @@ currentQuestion = question; renderQuestion(question); }
 
 function showCompletion() { const builder = document.getElementById('sentenceBuilderArea'); if (!builder) return;
 
-builder.innerHTML = <div class="completion-screen"> <h2>🎬 HollyBolly Complete!</h2> <p>Questions Completed: ${answeredIDs.size}</p> <p>Difficulty: ${difficulty}</p> <button id="playAgainBtn" class="action-btn">🔄 Play Again</button> <button id="backToMenuBtn" class="action-btn">🏠 Main Menu</button> </div>;
+    /*
+  builder.innerHTML = <div class="completion-screen">
+  <h2>🎬 HollyBolly Complete!</h2>
+  <p>Questions Completed: ${answeredIDs.size}</p>
+  <p>Difficulty: ${difficulty}</p>
+  <button id="playAgainBtn" class="action-btn">🔄 Play Again</button>
+  <button id="backToMenuBtn" class="action-btn">🏠 Main Menu</button> </div>;
+*/
 
+                           
+      builder.innerHTML = `
+  <div class="completion-screen">
+    <h2>🎬 HollyBolly Complete!</h2>
+    <p>Questions Completed: ${answeredIDs.size}</p>
+    <p>Difficulty: ${difficulty}</p>
+    <button id="playAgainBtn" class="action-btn">🔄 Play Again</button>
+    <button id="backToMenuBtn" class="action-btn">🏠 Main Menu</button>
+  </div>
+`;
+                           
 document.getElementById('playAgainBtn')?.addEventListener('click', startHollyBolly); document.getElementById('backToMenuBtn')?.addEventListener('click', () => { document.getElementById('gameArea').hidden = true; document.getElementById('menuArea').hidden = false; }); }
 
