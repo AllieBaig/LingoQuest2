@@ -26,6 +26,7 @@ document.addEventListener('click', async (e) => {
 
   try {
     const { start } = await loadMode(modeKey);
+    console.log(`🎮 Starting game mode: ${modeKey}`); // added by Allie
     if (typeof start === 'function') {
       start();
     } else {
