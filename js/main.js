@@ -11,7 +11,7 @@
 import { renderGameMenu } from './menuRenderer.js';
 import { loadMode } from './modeLoader.js';
 import { logEvent } from './eventLogger.js';
-import { handleGameLoadError } from './modeHelpers.js';
+import { handleGameLoadError } from './modeHelper.js';
 
 // 🔹 Render game menu at startup
 renderGameMenu();
