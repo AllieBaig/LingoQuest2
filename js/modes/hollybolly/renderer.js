@@ -21,7 +21,27 @@ container.innerHTML = '';
 
 const heading = document.createElement('h2'); heading.textContent = '🎥 Guess the Movie!'; container.appendChild(heading);
 
-const clues = document.createElement('div'); clues.className = 'clue-box'; clues.innerHTML = <p>🏞️ <strong>Place:</strong> ${currentQuestion.place}</p> <p>🐾 <strong>Animal:</strong> ${currentQuestion.animal}</p> <p>🎁 <strong>Thing:</strong> ${currentQuestion.thing}</p>; container.appendChild(clues);
+                            /*
+                              const clues =  document.createElement('div'); 
+                            clues.className = 'clue-box'; clues.innerHTML = <p>🏞️ <strong>Place:</strong>
+                              ${currentQuestion.place}</p> <p>🐾 <strong>Animal:</strong> 
+                                ${currentQuestion.animal}</p> <p>🎁 <strong>Thing:</strong> 
+                                ${currentQuestion.thing}</p>; container.appendChild(clues);
+                                    */
+                                                     
+                                                     
+const clues = document.createElement('div');
+clues.className = 'clue-box';
+clues.innerHTML = `
+  <p>🏞️ <strong>Place:</strong> ${currentQuestion.place}</p>
+  <p>🐾 <strong>Animal:</strong> ${currentQuestion.animal}</p>
+  <p>🎁 <strong>Thing:</strong> ${currentQuestion.thing}</p>
+`;
+container.appendChild(clues);
+
+                                                     
+
+                                                     
 
 const options = [currentQuestion.movie, currentQuestion.bollywood]; const shown = shuffleArray(options).slice(0, maxOptions);
 
