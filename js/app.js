@@ -10,7 +10,7 @@
 7) Timestamp: 2025-05-30 20:00 | File: js/app.js
 */
 
-import { initProfile } from './profile/profileManager.js';
+import { initProfile } from './profileManager.js';
 import { applyTheme } from './themeManager.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
